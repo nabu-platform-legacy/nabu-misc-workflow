@@ -1,0 +1,21 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.misc.workflow.types.WorkflowTransitionInstance</outputDefinition>
+	<sql>select
+	id,
+	definition_id,
+	workflow_id,
+	parent_id,
+	actor_id,
+	system_id,
+	started,
+	stopped,
+	log,
+	error_log,
+	error_code,
+	sequence,
+	transition_state,
+	from_state_id,
+	to_state_id
+from workflow_transition_instance
+where workflow_id = :workflowId</sql>
+</jdbcService>

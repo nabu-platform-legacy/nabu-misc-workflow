@@ -1,0 +1,17 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.misc.workflow.types.WorkflowInstance</outputDefinition>
+	<sql>select
+	id,
+	definition_id,
+	parent_id,
+	batch_id,
+	context_id,
+	started,
+	stopped,
+	environment,
+	transition_state,
+	state_id
+from workflow_instance
+where transition_state = :transitionState
+and definition_id = :definitionId</sql>
+</jdbcService>

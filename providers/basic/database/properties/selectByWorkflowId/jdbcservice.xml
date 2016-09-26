@@ -1,0 +1,11 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.misc.workflow.types.WorkflowInstanceProperty</outputDefinition>
+	<sql>select
+	key,
+	value,
+	id,
+	workflow_id,
+	transition_id
+from workflow_instance_property
+where workflow_id = :workflowId</sql>
+</jdbcService>

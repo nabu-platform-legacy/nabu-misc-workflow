@@ -1,0 +1,9 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<inputDefinition>nabu.misc.workflow.types.WorkflowInstanceProperty</inputDefinition>
+	<sql>update workflow_instance_property set
+	key = case when :key is null then key else :key end,
+	value = case when :value is null then value else :value end,
+	workflow_id = case when :workflowId is null then workflow_id else :workflowId end,
+	transition_id = case when :transitionId is null then transition_id else :transitionId end
+ where id = :id</sql>
+</jdbcService>

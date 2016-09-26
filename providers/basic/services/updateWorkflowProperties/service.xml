@@ -1,0 +1,18 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="b4a86943-4a3a-48f7-baba-415944b87e27">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="e2232838-fd13-44ab-9202-3f04c5a7ee57">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="64442bd4-8bfc-4a92-96aa-76bd641cf312" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.providers.basic.database.properties.update" resultName="resulte01dcf22846e44f58844fc37620f3dad" x="87" y="36">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c202637a-1048-4753-b0f0-beb2a11c32a8" fixedValue="false" optional="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7303dcc4-5389-4da5-8a11-93c2c5448084" fixedValue="false" optional="false">
+				<from>input/transactionId</from>
+				<to>transaction</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="e9bf1a3e-03ba-4a6f-9736-d8ab2e8d5b2f" fixedValue="false" optional="false">
+				<from>input/properties</from>
+				<to>parameters</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

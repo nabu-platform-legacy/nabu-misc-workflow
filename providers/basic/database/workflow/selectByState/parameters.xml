@@ -1,0 +1,4 @@
+<structure name="parameter">
+    <field name="stateId" type="java.lang.String"/>
+    <field name="definitionId" type="java.lang.String"/>
+</structure>

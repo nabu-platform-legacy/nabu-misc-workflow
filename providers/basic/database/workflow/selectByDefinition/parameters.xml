@@ -1,0 +1,3 @@
+<structure name="parameter">
+    <field name="definitionId" type="java.lang.String"/>
+</structure>

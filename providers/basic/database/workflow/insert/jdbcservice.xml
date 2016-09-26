@@ -1,0 +1,26 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<inputDefinition>nabu.misc.workflow.types.WorkflowInstance</inputDefinition>
+	<sql>insert into workflow_instance (
+	id,
+	definition_id,
+	parent_id,
+	batch_id,
+	context_id,
+	started,
+	stopped,
+	environment,
+	transition_state,
+	state_id
+) values (
+	:id,
+	:definitionId,
+	:parentId,
+	:batchId,
+	:contextId,
+	:started,
+	:stopped,
+	:environment,
+	:transitionState,
+	:stateId
+)</sql>
+</jdbcService>

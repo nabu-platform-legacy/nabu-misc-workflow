@@ -1,0 +1,84 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="eeca9c0a-53eb-4bc6-89b8-8395786fffa9">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch" disabled="false" id="49881e70-52b0-49da-a24b-cd6e5de4a8f7">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/stateId != null &amp;&amp; input/transitionState != null" id="4a0e5c2b-cf6a-48ef-bb99-c61c054e88de">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="90a25a6b-de49-45d0-9bbe-a136dea22f52" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.providers.basic.database.workflow.selectByAllState" resultName="result0c4283ffd68b46b98079db597aa97680" x="72" y="45">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="908f172c-3f89-4728-9346-d88cf1c52c00" optional="false" fixedValue="false">
+					<from>input/connectionId</from>
+					<to>connection</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="f1174898-a5bf-4d79-909a-9575b1ba6177" optional="false" fixedValue="false">
+					<from>input/transitionState</from>
+					<to>parameters/transitionState</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="dcedb294-39ba-438f-8b1a-74df5185a4d3" optional="false" fixedValue="false">
+					<from>input/stateId</from>
+					<to>parameters/stateId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="f5582a03-ec19-452c-93a8-b64ccf5f1efa" optional="false" fixedValue="false">
+					<from>input/definitionId</from>
+					<to>parameters/definitionId</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="57cf990e-56ff-4c67-a38e-a9b7af68ab01" optional="false" fixedValue="false">
+				<from>result0c4283ffd68b46b98079db597aa97680/results</from>
+				<to>output/workflows</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/stateId != null" id="ef147025-140c-4640-a0bd-4e782c2872c3">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="9255fc96-65cc-4c7e-91a8-34160739d295" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.providers.basic.database.workflow.selectByState" resultName="result648a7e8703ce4c6d95de970ba0b79ce6" x="161" y="63">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="6e367b78-f55d-48e7-bd88-9fff381def3d" optional="false" fixedValue="false">
+					<from>input/connectionId</from>
+					<to>connection</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="5ea42557-dcb1-4c50-925b-477b14582acb" optional="false" fixedValue="false">
+					<from>input/stateId</from>
+					<to>parameters/stateId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d80a50f6-e1e2-421e-a91b-02d38b16f43d" optional="false" fixedValue="false">
+					<from>input/definitionId</from>
+					<to>parameters/definitionId</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="3b89183b-9e09-424e-b2bf-929c56643fc1" optional="false" fixedValue="false">
+				<from>result648a7e8703ce4c6d95de970ba0b79ce6/results</from>
+				<to>output/workflows</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/transitionState != null" id="23722c90-73ff-48d5-9360-9e3237ddba99">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="77f3bbcc-c506-402b-afe2-8114b12fbb82" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.providers.basic.database.workflow.selectByTransitionState" resultName="resultd85d08e4e26545fc8f3a0654a5a676cb" x="85" y="75">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c0f73a97-ac62-4e55-8a2b-021d3dc52d7b" optional="false" fixedValue="false">
+					<from>input/connectionId</from>
+					<to>connection</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="54d90fd9-7979-48bd-980b-39532cabd80c" optional="false" fixedValue="false">
+					<from>input/definitionId</from>
+					<to>parameters/definitionId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="9abf4e25-71a3-4576-984c-6b793c720ed8" optional="false" fixedValue="false">
+					<from>input/transitionState</from>
+					<to>parameters/transitionState</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="e1152a9c-f775-466a-a075-b4f57357d95f" optional="false" fixedValue="false">
+				<from>resultd85d08e4e26545fc8f3a0654a5a676cb/results</from>
+				<to>output/workflows</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="dbcb2fdf-7b54-4bd4-a9fa-bed4b5368d43">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="6204e726-e2a6-4c6b-b79c-591df8dd4f6e" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.providers.basic.database.workflow.selectByDefinition" resultName="resultfad71099df754335a4a73abc1388311c" x="70" y="68">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="406180ab-47e8-4d18-acad-56732097749e" optional="false" fixedValue="false">
+					<from>input/connectionId</from>
+					<to>connection</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="ea0efb4d-5616-4d92-b978-b28ae88dcaf7" optional="false" fixedValue="false">
+					<from>input/definitionId</from>
+					<to>parameters/definitionId</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="3dddb1c9-4ce2-4b5c-a3e2-f80fc6a1faa5" optional="false" fixedValue="false">
+				<from>resultfad71099df754335a4a73abc1388311c/results</from>
+				<to>output/workflows</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

@@ -1,0 +1,5 @@
+<structure name="parameter">
+    <field name="transitionState" type="java.lang.String"/>
+    <field name="definitionId" type="java.lang.String"/>
+    <field name="stateId" type="java.lang.String"/>
+</structure>
