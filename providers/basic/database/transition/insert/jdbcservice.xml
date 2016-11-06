@@ -1,6 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<inputDefinition>nabu.misc.workflow.types.WorkflowTransitionInstance</inputDefinition>
-	<sql>insert into workflow_transition_instance (
+	<sql>insert into workflow_transition_instances (
 	id,
 	definition_id,
 	workflow_id,
@@ -9,13 +9,16 @@
 	system_id,
 	started,
 	stopped,
+	uri,
 	log,
+	code,
 	error_log,
 	error_code,
 	sequence,
 	transition_state,
 	from_state_id,
-	to_state_id
+	to_state_id,
+	batch_id
 ) values (
 	:id,
 	:definitionId,
@@ -25,12 +28,15 @@
 	:systemId,
 	:started,
 	:stopped,
+	:uri,
 	:log,
+	:code,
 	:errorLog,
 	:errorCode,
 	:sequence,
 	:transitionState,
 	:fromStateId,
-	:toStateId
+	:toStateId,
+	:batchId
 )</sql>
 </jdbcService>

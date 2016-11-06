@@ -1,6 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<inputDefinition>nabu.misc.workflow.types.WorkflowTransitionInstance</inputDefinition>
-	<sql>update workflow_transition_instance set
+	<sql>update workflow_transition_instances set
 	definition_id = case when :definitionId is null then definition_id else :definitionId end,
 	workflow_id = case when :workflowId is null then workflow_id else :workflowId end,
 	parent_id = case when :parentId is null then parent_id else :parentId end,
@@ -8,12 +8,15 @@
 	system_id = case when :systemId is null then system_id else :systemId end,
 	started = case when :started is null then started else :started end,
 	stopped = case when :stopped is null then stopped else :stopped end,
+	uri = case when :uri is null then uri else :uri end,
 	log = case when :log is null then log else :log end,
+	code = case when :code is null then code else :code end,
 	error_log = case when :errorLog is null then error_log else :errorLog end,
 	error_code = case when :errorCode is null then error_code else :errorCode end,
 	sequence = case when :sequence is null then sequence else :sequence end,
 	transition_state = case when :transitionState is null then transition_state else :transitionState end,
 	from_state_id = case when :fromStateId is null then from_state_id else :fromStateId end,
-	to_state_id = case when :toStateId is null then to_state_id else :toStateId end
+	to_state_id = case when :toStateId is null then to_state_id else :toStateId end,
+	batch_id = case when :batchId is null then batch_id else :batchId end
  where id = :id</sql>
 </jdbcService>

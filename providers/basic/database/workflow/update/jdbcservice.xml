@@ -1,10 +1,13 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<inputDefinition>nabu.misc.workflow.types.WorkflowInstance</inputDefinition>
-	<sql>update workflow_instance set
+	<sql>update workflow_instances set
 	definition_id = case when :definitionId is null then definition_id else :definitionId end,
 	parent_id = case when :parentId is null then parent_id else :parentId end,
 	batch_id = case when :batchId is null then batch_id else :batchId end,
 	context_id = case when :contextId is null then context_id else :contextId end,
+	group_id = case when :groupId is null then group_id else :groupId end,
+	correlation_id = case when :correlationId is null then correlation_id else :correlationId end,
+	uri = case when :uri is null then uri else :uri end,
 	started = case when :started is null then started else :started end,
 	stopped = case when :stopped is null then stopped else :stopped end,
 	environment = case when :environment is null then environment else :environment end,

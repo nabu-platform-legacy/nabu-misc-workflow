@@ -1,6 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<inputDefinition>nabu.misc.workflow.types.WorkflowInstanceProperty</inputDefinition>
-	<sql>insert into workflow_instance_property (
+	<sql>insert into workflow_instance_properties (
 	key,
 	value,
 	id,

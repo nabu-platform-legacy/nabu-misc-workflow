@@ -9,13 +9,16 @@
 	system_id,
 	started,
 	stopped,
+	uri,
 	log,
+	code,
 	error_log,
 	error_code,
 	sequence,
 	transition_state,
 	from_state_id,
-	to_state_id
-from workflow_transition_instance
+	to_state_id,
+	batch_id
+from workflow_transition_instances
 where workflow_id = :workflowId</sql>
 </jdbcService>

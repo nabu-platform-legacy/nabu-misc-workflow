@@ -6,12 +6,19 @@
 	parent_id,
 	batch_id,
 	context_id,
+	group_id,
+	correlation_id,
+	uri,
 	started,
 	stopped,
 	environment,
 	transition_state,
 	state_id
-from workflow_instance
+from workflow_instances $join
 where state_id = :stateId
-and definition_id = :definitionId</sql>
+and definition_id = :definitionId
+and (:from is null or started &gt; :from)
+and (:until is null or started &lt;= :until)
+$where
+order by started desc</sql>
 </jdbcService>

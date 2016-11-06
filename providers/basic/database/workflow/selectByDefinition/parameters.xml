@@ -1,3 +1,7 @@
 <structure name="parameter">
+    <field name="join" type="java.lang.String"/>
     <field name="definitionId" type="java.lang.String"/>
+    <field name="from" type="java.util.Date"/>
+    <field name="until" type="java.util.Date"/>
+    <field name="where" type="java.lang.String"/>
 </structure>

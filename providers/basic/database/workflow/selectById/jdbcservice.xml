@@ -6,11 +6,14 @@
 	parent_id,
 	batch_id,
 	context_id,
+	group_id,
+	correlation_id,
+	uri,
 	started,
 	stopped,
 	environment,
 	transition_state,
 	state_id
-from workflow_instance
+from workflow_instances
 where id=:workflowId</sql>
 </jdbcService>

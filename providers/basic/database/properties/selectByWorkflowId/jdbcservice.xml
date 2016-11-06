@@ -6,6 +6,6 @@
 	id,
 	workflow_id,
 	transition_id
-from workflow_instance_property
+from workflow_instance_properties
 where workflow_id = :workflowId</sql>
 </jdbcService>
