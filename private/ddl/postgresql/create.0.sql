@@ -15,6 +15,7 @@ create table workflow_instances (
 	batch_id text,
 	context_id text,
 	group_id text,
+	workflow_type text,
 	correlation_id text,
 	uri text,
 	started timestamp not null,
