@@ -8,6 +8,7 @@
 	context_id,
 	group_id,
 	correlation_id,
+	workflow_type,
 	uri,
 	started,
 	stopped,

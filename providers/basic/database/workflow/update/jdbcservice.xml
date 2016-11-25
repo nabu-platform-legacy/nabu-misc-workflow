@@ -7,6 +7,7 @@
 	context_id = case when :contextId is null then context_id else :contextId end,
 	group_id = case when :groupId is null then group_id else :groupId end,
 	correlation_id = case when :correlationId is null then correlation_id else :correlationId end,
+	workflow_type = case when :workflowType is null then workflow_type else :workflowType end,
 	uri = case when :uri is null then uri else :uri end,
 	started = case when :started is null then started else :started end,
 	stopped = case when :stopped is null then stopped else :stopped end,
