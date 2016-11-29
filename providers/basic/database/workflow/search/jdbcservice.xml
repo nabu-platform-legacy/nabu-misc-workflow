@@ -1,0 +1,33 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.misc.workflow.types.WorkflowInstance</outputDefinition>
+	<sql>select
+	wf.id,
+	wf.definition_id,
+	wf.parent_id,
+	wf.batch_id,
+	wf.context_id,
+	wf.group_id,
+	wf.correlation_id,
+	wf.workflow_type,
+	wf.uri,
+	wf.started,
+	wf.stopped,
+	wf.environment,
+	wf.transition_state,
+	wf.state_id
+from workflow_instances wf $join
+where (:transitionState is null or wf.transition_state = :transitionState)
+and (:definitionId is null or wf.definition_id = :definitionId)
+and (:stateId is null or wf.state_id = :stateId)
+and (:from is null or started &gt; :from)
+and (:until is null or started &lt;= :until)
+and (:environment is null or wf.environment = :environment)
+and (:parentId is null or wf.parent_id = :parentId)
+and (:batchId is null or wf.batch_id = :batchId)
+and (:correlationId is null or wf.correlation_id = :correlationId)
+and (:contextId is null or wf.context_id = :contextId)
+and (:groupId is null or wf.group_id = :groupId)
+and (:workflowType is null or wf.workflow_type = :workflowType)
+$where
+order by started desc</sql>
+</jdbcService>
