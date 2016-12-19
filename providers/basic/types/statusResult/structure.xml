@@ -1,0 +1,4 @@
+<structure name="status">
+    <field name="transitionState" type="nabu.misc.workflow.types.WorkflowInstance$Level"/>
+    <field name="amount" type="java.lang.Long"/>
+</structure>

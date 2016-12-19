@@ -20,5 +20,6 @@
 	to_state_id,
 	batch_id
 from workflow_transition_instances
-where workflow_id = :workflowId</sql>
+where workflow_id = :workflowId
+order by sequence asc</sql>
 </jdbcService>

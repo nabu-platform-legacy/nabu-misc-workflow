@@ -1,0 +1,4 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.misc.workflow.providers.basic.types.statusResult</outputDefinition>
+	<sql>select transition_state, count(id) as amount from workflow_instances group by transition_state</sql>
+</jdbcService>
