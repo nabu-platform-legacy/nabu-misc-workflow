@@ -1,5 +1,4 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<outputDefinition>nabu.misc.workflow.types.WorkflowInstance</outputDefinition>
 	<sql>select
 	wf.id,
 	wf.definition_id,
@@ -28,6 +27,8 @@ and (:correlationId is null or wf.correlation_id = :correlationId)
 and (:contextId is null or wf.context_id = :contextId)
 and (:groupId is null or wf.group_id = :groupId)
 and (:workflowType is null or wf.workflow_type = :workflowType)
+and (:running is null or :running = 'false' or wf.transition_state not in ('SUCCEEDED', 'FAILED'))
 $where
 order by started desc</sql>
+	<outputDefinition>nabu.misc.workflow.types.WorkflowInstance</outputDefinition>
 </jdbcService>
