@@ -1,0 +1,18 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>select count(wf.id) as total
+from workflow_instances wf $join
+where (:transitionState is null or wf.transition_state = :transitionState)
+and (:definitionId is null or wf.definition_id = :definitionId)
+and (:stateId is null or wf.state_id = :stateId)
+and (:from is null or started &gt; :from)
+and (:until is null or started &lt;= :until)
+and (:environment is null or wf.environment = :environment)
+and (:parentId is null or wf.parent_id = :parentId)
+and (:batchId is null or wf.batch_id = :batchId)
+and (:correlationId is null or wf.correlation_id = :correlationId)
+and (:contextId is null or wf.context_id = :contextId)
+and (:groupId is null or wf.group_id = :groupId)
+and (:workflowType is null or wf.workflow_type = :workflowType)
+and (:running is null or :running = 'false' or wf.transition_state not in ('SUCCEEDED', 'FAILED'))
+$where</sql>
+</jdbcService>

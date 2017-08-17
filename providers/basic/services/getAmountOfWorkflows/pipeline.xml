@@ -1,0 +1,7 @@
+<structure interface="be.nabu.eai.module.workflow.provider.WorkflowManager.getAmountOfWorkflows" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <field name="join" type="java.lang.String"/>
+    <field name="where" type="java.lang.String"/>
+    <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" name="pairs"/>
+</structure>

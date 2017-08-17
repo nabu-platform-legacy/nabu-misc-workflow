@@ -1,0 +1,17 @@
+<structure name="parameter">
+    <field name="join" type="java.lang.String"/>
+    <field name="transitionState" type="java.lang.String"/>
+    <field name="definitionId" type="java.lang.String"/>
+    <field name="stateId" type="java.lang.String"/>
+    <field name="from" type="java.util.Date"/>
+    <field name="until" type="java.util.Date"/>
+    <field name="environment" type="java.lang.String"/>
+    <field name="parentId" type="java.lang.String"/>
+    <field name="batchId" type="java.lang.String"/>
+    <field name="correlationId" type="java.lang.String"/>
+    <field name="contextId" type="java.lang.String"/>
+    <field name="groupId" type="java.lang.String"/>
+    <field name="workflowType" type="java.lang.String"/>
+    <field name="running" type="java.lang.String"/>
+    <field name="where" type="java.lang.String"/>
+</structure>
