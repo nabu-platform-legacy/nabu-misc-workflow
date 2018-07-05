@@ -1,6 +1,10 @@
 <structure interface="be.nabu.eai.module.workflow.provider.WorkflowManager.getWorkflows" name="pipeline">
-    <structure name="input"/>
-    <structure name="output"/>
+    <structure name="input">
+        <field maxOccurs="unbounded" minOccurs="0" name="orderBy" type="java.lang.String"/>
+    </structure>
+    <structure name="output">
+        <field minOccurs="0" name="totalRowCount" type="java.lang.Long"/>
+    </structure>
     <field name="join" type="java.lang.String"/>
     <field name="where" type="java.lang.String"/>
     <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" name="pairs"/>

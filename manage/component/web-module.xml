@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webModule>
+    <path>/workflow/api/v1</path>
+    <webFragments>nabu.misc.workflow.manage.rest.instance.list</webFragments>
+    <webFragments>nabu.misc.workflow.manage.rest.instance.get</webFragments>
+    <webFragments>nabu.misc.workflow.manage.rest.instance.fail</webFragments>
+    <webFragments>nabu.misc.workflow.manage.rest.transition.attachment</webFragments>
+    <webFragments>nabu.misc.workflow.manage.rest.instance.attachment</webFragments>
+    <webFragments>nabu.misc.workflow.manage.rest.dashboard.byTransitionState</webFragments>
+</webModule>

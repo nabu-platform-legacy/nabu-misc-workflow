@@ -1,4 +1,8 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>select transition_state, count(id) as amount from workflow_instances
+where (:since is null or started &gt;= :since)
+	and (:definitionId is null or definition_id = :definitionId)
+group by transition_state
+order by transition_state</sql>
 	<outputDefinition>nabu.misc.workflow.providers.basic.types.statusResult</outputDefinition>
-	<sql>select transition_state, count(id) as amount from workflow_instances group by transition_state</sql>
 </jdbcService>

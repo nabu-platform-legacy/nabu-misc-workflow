@@ -1,0 +1,8 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="2d103336-e189-4b73-a3b3-37152b895c05">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="immutable" id="51406d99-16a4-448e-859f-efba88248339">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="ee176054-66c6-4c56-977e-022cd1c4b023" fixedValue="true" optional="false" mask="false">
+			<from>false</from>
+			<to>output/hasChanged</to>
+		</steps>
+	</steps>
+</sequence>

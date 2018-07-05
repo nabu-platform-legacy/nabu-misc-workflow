@@ -1,0 +1,37 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="59dbac5b-ac2b-4c1c-860d-c44424fdb9f4">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="abc9ff0a-61a3-4acd-8722-1b93e0399577">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="20dfe643-42d6-43c5-bc22-04c42bf3b5a3" serviceId="nabu.misc.workflow.providers.basic.services.getWorkflow" resultName="resultf37c16df757d4ce0abcb7ae8959236b0" invocationOrder="0" temporaryMapping="true" y="229" x="48">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="cd9542c5-78c5-43e3-88cb-78f660342ce6" fixedValue="false" mask="false" optional="false">
+				<from>input/path/workflowId</from>
+				<to>workflowId</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2e54ea91-55dd-4a0b-a145-45cc2f3eaee6" fixedValue="false" mask="false" optional="false">
+			<from>resultf37c16df757d4ce0abcb7ae8959236b0/workflow</from>
+			<to>output/content/workflow</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="c57cb8c6-e7e6-48f2-8afd-0ef47fd749c8" serviceId="nabu.misc.workflow.providers.basic.services.getWorkflowProperties" resultName="result298c73cf464c4e0d9637fa99b8926d93" invocationOrder="0" temporaryMapping="true" y="143" x="70">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="73818e5a-4e21-47d3-b6f5-14890610cf87" fixedValue="false" mask="false" optional="false">
+				<from>input/path/workflowId</from>
+				<to>workflowId</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="58c0f33c-e13b-48d3-bbcf-4c49dce72703" fixedValue="false" mask="false" optional="false">
+			<from>result298c73cf464c4e0d9637fa99b8926d93/properties</from>
+			<to>output/content/properties</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="b203cae4-0bf1-45de-9367-393b3800e0bc" serviceId="nabu.misc.workflow.providers.basic.services.getTransitions" resultName="result6ba017c77266401f8b5480258deeb614" invocationOrder="0" temporaryMapping="true" y="73" x="114">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="fc9f6372-ce0d-4550-aa5c-1ef39e2b4659" fixedValue="false" mask="false" optional="false">
+				<from>input/path/workflowId</from>
+				<to>workflowId</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="635b9942-8f4e-42ef-b7b9-38dd6673bd61" fixedValue="false" mask="false" optional="false">
+			<from>result6ba017c77266401f8b5480258deeb614/transitions</from>
+			<to>output/content/transitions</to>
+		</steps>
+	</steps>
+</sequence>

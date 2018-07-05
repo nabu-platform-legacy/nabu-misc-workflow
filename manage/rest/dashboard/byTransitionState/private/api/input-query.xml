@@ -1,0 +1,4 @@
+<structure name="query">
+    <field minOccurs="0" name="since" type="java.util.Date"/>
+    <field minOccurs="0" name="definitionId" type="java.lang.String"/>
+</structure>

@@ -1,0 +1,5 @@
+<structure interface="$self:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure definition="nabu.misc.workflow.types.WorkflowDefinition" minOccurs="0" name="workflow"/>
+</structure>

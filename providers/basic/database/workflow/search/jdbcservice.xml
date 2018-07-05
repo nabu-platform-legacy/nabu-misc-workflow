@@ -28,7 +28,6 @@ and (:contextId is null or wf.context_id = :contextId)
 and (:groupId is null or wf.group_id = :groupId)
 and (:workflowType is null or wf.workflow_type = :workflowType)
 and (:running is null or :running = 'false' or wf.transition_state not in ('SUCCEEDED', 'FAILED'))
-$where
-order by started desc</sql>
+$where</sql>
 	<outputDefinition>nabu.misc.workflow.types.WorkflowInstance</outputDefinition>
 </jdbcService>

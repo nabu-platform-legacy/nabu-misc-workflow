@@ -1,0 +1,53 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="8d4b0f6c-467c-479b-ae20-4a7a21904015">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="3d4b0002-dfe7-409b-a19a-72d3b161dc26">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="207a1887-5be9-479c-91ee-775456dac4ce" resultName="resulte39c21c6c479487796c0bc0639b25aa9" serviceId="nabu.misc.workflow.providers.basic.services.getWorkflow" invocationOrder="0" temporaryMapping="true" y="58" x="21">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="63660ebc-a647-4709-ab61-48ec2597b906" fixedValue="false" optional="false" mask="false">
+				<from>input/path/workflowId</from>
+				<to>workflowId</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="e4143ef6-c17e-4d39-904b-db6706c60583" fixedValue="false" optional="false" mask="false">
+			<from>resulte39c21c6c479487796c0bc0639b25aa9/workflow</from>
+			<to>workflow</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw" disabled="false" label="!workflow" id="818ee8fb-8509-4a0c-aee7-1524cb79ecb7" message="Could not find workflow" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw" disabled="false" label="workflow/uri = null" id="04c9dca2-2c0e-4629-bada-068a546c8da0" message="No attachment in workflow" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Get content" id="dcc31f92-d860-40c9-bc03-410d6e8fbd85">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="f7982416-a6df-408e-a33c-6bbaaa7989b1" resultName="result30288dfafa004caebb51f0b9bbe7a851" serviceId="nabu.frameworks.datastore.Services.retrieve" invocationOrder="0" temporaryMapping="true" y="105" x="130">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="5289d7ac-5805-46d1-83a3-1f6df8243ad7" fixedValue="false" optional="false" mask="false">
+				<from>workflow/uri</from>
+				<to>uri</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="b9cb5e69-3e61-4f7b-af66-25a6d4a0f963" resultName="result35f399b552d7462a9ba27198af0bae9e" serviceId="nabu.frameworks.datastore.Services.properties" invocationOrder="0" temporaryMapping="true" y="214" x="133">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="a9103098-bd18-440c-b0d7-75ff2fe57727" fixedValue="false" optional="false" mask="false">
+				<from>workflow/uri</from>
+				<to>uri</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2c7dd634-18fa-47e0-ac54-c81fce194e70" fixedValue="false" optional="false" mask="false">
+			<from>result30288dfafa004caebb51f0b9bbe7a851/stream</from>
+			<to>output/content</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="18b08f58-0ab5-4e5b-8b58-518713e1385a" fixedValue="false" optional="false" mask="false">
+			<from>result35f399b552d7462a9ba27198af0bae9e/properties/contentType</from>
+			<to>output/meta/contentType</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="46000334-9ac4-482b-b468-f58b9b6761a7" fixedValue="false" optional="false" mask="false">
+			<from>result35f399b552d7462a9ba27198af0bae9e/properties/size</from>
+			<to>output/meta/contentLength</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b0ee8ba2-4caf-45b5-a407-7f747a7c5ca6" fixedValue="false" optional="false" mask="false">
+			<from>result35f399b552d7462a9ba27198af0bae9e/properties/name</from>
+			<to>output/meta/fileName</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2c7c147a-c2aa-4a07-b46c-d9c58cc1db50" fixedValue="false" optional="false" mask="false">
+			<from>result35f399b552d7462a9ba27198af0bae9e/properties/lastModified</from>
+			<to>output/cache/lastModified</to>
+		</steps>
+	</steps>
+</sequence>

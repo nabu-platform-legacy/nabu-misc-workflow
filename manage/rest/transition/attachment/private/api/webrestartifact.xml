@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restInterface>
+    <method>GET</method>
+    <path>/instance/{workflowId}/transition/{transitionId}/attachment</path>
+    <role>manager</role>
+    <permissionAction>workflow.read</permissionAction>
+    <outputAsStream>true</outputAsStream>
+    <lenient>false</lenient>
+    <webApplicationId>false</webApplicationId>
+    <language>false</language>
+    <allowFormBinding>false</allowFormBinding>
+    <caseInsensitive>false</caseInsensitive>
+    <cache>true</cache>
+</restInterface>

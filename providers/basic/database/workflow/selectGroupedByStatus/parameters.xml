@@ -1,1 +1,4 @@
-<structure name="parameter"/>
+<structure name="parameter">
+    <field minOccurs="0" name="since" timezone="UTC" type="java.util.Date"/>
+    <field minOccurs="0" name="definitionId" type="java.lang.String"/>
+</structure>

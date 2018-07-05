@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restInterface>
+    <method>GET</method>
+    <path>/dashboard/transitionState</path>
+    <queryParameters>since, definitionId</queryParameters>
+    <role>manager</role>
+    <permissionAction>workflow.read</permissionAction>
+    <output>nabu.misc.workflow.manage.types.statusList</output>
+    <lenient>false</lenient>
+    <webApplicationId>false</webApplicationId>
+    <language>false</language>
+    <allowFormBinding>false</allowFormBinding>
+    <caseInsensitive>false</caseInsensitive>
+    <cache>false</cache>
+</restInterface>

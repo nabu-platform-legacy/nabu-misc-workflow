@@ -1,0 +1,4 @@
+<structure name="workflowList">
+    <structure definition="nabu.misc.workflow.types.WorkflowInstance" maxOccurs="unbounded" minOccurs="0" name="workflows"/>
+    <structure definition="nabu.services.jdbc.types.Page" minOccurs="0" name="page"/>
+</structure>
