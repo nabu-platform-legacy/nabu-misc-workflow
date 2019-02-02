@@ -1,7 +1,9 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.misc.workflow.types.WorkflowInstance</outputDefinition>
 	<sql>select
 	wf.id,
 	wf.definition_id,
+	wf.version,
 	wf.parent_id,
 	wf.batch_id,
 	wf.context_id,
@@ -14,7 +16,7 @@
 	wf.environment,
 	wf.transition_state,
 	wf.state_id
-from workflow_instances wf $join
+from ~workflow_instances wf $join
 where (:transitionState is null or wf.transition_state = :transitionState)
 and (:definitionId is null or wf.definition_id = :definitionId)
 and (:stateId is null or wf.state_id = :stateId)
@@ -29,5 +31,4 @@ and (:groupId is null or wf.group_id = :groupId)
 and (:workflowType is null or wf.workflow_type = :workflowType)
 and (:running is null or :running = 'false' or wf.transition_state not in ('SUCCEEDED', 'FAILED'))
 $where</sql>
-	<outputDefinition>nabu.misc.workflow.types.WorkflowInstance</outputDefinition>
 </jdbcService>

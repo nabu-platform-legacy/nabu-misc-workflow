@@ -1,0 +1,23 @@
+<structure interface="be.nabu.eai.module.services.vm.api.ServiceExecutor.execute" name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="queue" type="java.lang.String"/>
+        <field minOccurs="0" name="taskTarget" type="java.lang.String"/>
+        <structure definition="java.lang.Object" minOccurs="0" name="metadata"/>
+        <field minOccurs="0" name="datastore" type="java.lang.Boolean"/>
+        <field minOccurs="0" name="groupId" type="java.lang.String"/>
+        <field name="workflowId" type="java.lang.String"/>
+        <field minOccurs="0" name="stateId" type="java.lang.String"/>
+        <field minOccurs="0" name="definitionId" type="java.lang.String"/>
+        <field comment="Whether or not to check the past of the workflow" minOccurs="0" name="ignorePast" type="java.lang.Boolean"/>
+    </structure>
+    <structure name="output"/>
+    <field name="taskInput" type="java.lang.String"/>
+    <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="properties"/>
+    <field name="taskId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <structure definition="nabu.misc.workflow.types.WorkflowInstance" minOccurs="0" name="workflow"/>
+    <field maxOccurs="unbounded" name="stateIds" type="java.lang.String"/>
+    <field name="rowCount" type="java.lang.Long"/>
+    <structure definition="be.nabu.eai.module.workflow.WorkflowState" maxOccurs="unbounded" minOccurs="0" name="states"/>
+    <structure definition="be.nabu.eai.module.workflow.WorkflowState" name="state"/>
+</structure>

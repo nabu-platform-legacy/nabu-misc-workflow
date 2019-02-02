@@ -1,0 +1,90 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="0267bbab-c633-41a4-9d1e-2cb779e8a2d7">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Unstage by the current workflow state" id="ae31998d-141f-4974-84a6-0ddde2c71c6d">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="704b8274-9efa-4ce1-8546-5a98cce25b83" serviceId="nabu.frameworks.tasks.database.task.unstage" resultName="result86feebe9effc4bb6b7012bc00dd51911" invocationOrder="0" temporaryMapping="true" y="35" x="58">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="bc596ac5-5667-4335-9710-2b552d1c5515" mask="false" fixedValue="false" optional="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c2b98d73-4b30-45e3-910a-487814d4f9f8" mask="false" fixedValue="false" optional="false">
+				<from>input/transactionId</from>
+				<to>transaction</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="1ba1a625-61d5-4373-98d6-3a6a5355d955" mask="false" fixedValue="false" optional="false">
+				<from>input/workflow/id</from>
+				<to>parameters[0]/correlationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="13b2a446-9983-4aa7-9962-3c9302ed9351" mask="false" fixedValue="false" optional="false">
+				<from>input/workflow/stateId</from>
+				<to>parameters[0]/contextId[0]</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="f0836a70-4dc9-4ad7-bc76-7195df01cedb" mask="false" fixedValue="false" optional="false">
+			<from>result86feebe9effc4bb6b7012bc00dd51911/rowCount</from>
+			<to>rowCount</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="rowCount &gt; 0" comment="Wake up the poller" id="32a77b7c-13ff-467d-a732-56607c166910">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="a8b955ac-a908-415c-8295-49738f917995" serviceId="nabu.frameworks.tasks.services.poller.wakeup" resultName="resultb4fbeb2b07404910abf4721456b614e4" invocationOrder="0" temporaryMapping="true" y="124" x="56">
+			<asynchronous>false</asynchronous>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Get the final states for the workflow" id="f0bdaf82-4047-401f-9a6d-661bcc7d6dbd">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="bc7662d4-4cc3-48fd-945b-17fe3bfd3686" serviceId="nabu.misc.workflow.Services.getFinalStates" resultName="resulta3491dd939d1491db7ff2aac0202deca" invocationOrder="0" temporaryMapping="true" y="83" x="137">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="9e6daab1-c44e-47b9-bfc5-b72951b360b9" mask="false" fixedValue="false" optional="false">
+				<from>input/workflow/definitionId</from>
+				<to>definitionId</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="380f043d-d536-48d9-ba1a-1477af97a6c7" mask="false" fixedValue="false" optional="false">
+			<from>resulta3491dd939d1491db7ff2aac0202deca/states</from>
+			<to>states</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence" disabled="false" label="input/workflow/stateId # states/id" comment="If the workflow is currently in a final state, do some more stuff" id="95ddd0b0-da9f-419e-9b04-a6195d2827b8">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Unstage the tasks that were not connected to any state specifically" id="3dfd1e261c3d4081b25fc8d9e012577c">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="f8344a93d0164402b7ca872dead18511" serviceId="nabu.frameworks.tasks.database.task.unstage" resultName="result86feebe9effc4bb6b7012bc00dd51911" invocationOrder="0" temporaryMapping="true" y="35" x="58">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c9212ab73ca8484ca07aef9a2d2fce57" mask="false" fixedValue="false" optional="false">
+					<from>input/connectionId</from>
+					<to>connection</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="fddb7aaf54bb45d8a6d097ed6258239a" mask="false" fixedValue="false" optional="false">
+					<from>input/transactionId</from>
+					<to>transaction</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b9dff863-2de2-4b74-9ff2-cd1caa221c04" mask="false" fixedValue="false" optional="false">
+					<from>input/workflow/id</from>
+					<to>parameters[0]/correlationId</to>
+				</steps>
+				<asynchronous>false</asynchronous>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="a1db1ce3b03c4cfdb491f70aed704950" mask="false" fixedValue="false" optional="false">
+				<from>result86feebe9effc4bb6b7012bc00dd51911/rowCount</from>
+				<to>rowCount</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Cancel the tasks connected to a state that didn't happen" id="fd98c87f-2831-4905-a08f-ef2d2c619ea9">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="3d84585c-a04f-4f9e-b542-2e7b2321cc41" serviceId="nabu.frameworks.tasks.database.task.cancelStaged" resultName="resultb57ed832fd08465f93c23d9c468a4449" invocationOrder="0" temporaryMapping="true" y="55" x="77">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="40729eb7-a3b0-4a92-a3a1-f3dcda4779c3" mask="false" fixedValue="false" optional="false">
+					<from>input/connectionId</from>
+					<to>connection</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="bff3d6fe-2a20-4324-88a9-c6bc13ce1ef4" mask="false" fixedValue="false" optional="false">
+					<from>input/transactionId</from>
+					<to>transaction</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="412fbcab-1fd3-4f39-8332-e8698e3650b4" mask="false" fixedValue="false" optional="false">
+					<from>input/workflow/id</from>
+					<to>parameters[0]/correlationId</to>
+				</steps>
+				<asynchronous>false</asynchronous>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="rowCount &gt; 0" comment="Wake up the poller" id="fda043a8e42a4b6da9dea3be208a070a">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="2b9eb58c44104270b0bc2eb24607f32d" serviceId="nabu.frameworks.tasks.services.poller.wakeup" resultName="resultb4fbeb2b07404910abf4721456b614e4" invocationOrder="0" temporaryMapping="true" y="124" x="56">
+				<asynchronous>false</asynchronous>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

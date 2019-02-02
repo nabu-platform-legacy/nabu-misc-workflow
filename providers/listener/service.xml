@@ -1,0 +1,15 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="8bb04a76-3b56-4605-bf55-cd51efe3e8eb">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="28628af5-4d24-4eee-8805-22880957a2d0">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="73f5764d-2708-4379-afbb-c59cdd6aeef6" serviceId="nabu.misc.workflow.utils.unstage" resultName="result88994f0c3e9742938cf3911c5a1fbc62" invocationOrder="0" temporaryMapping="true" y="41" x="28">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="642b1717-a5c3-4bbd-8a69-c15b4220b2b2" fixedValue="false" optional="false" mask="false">
+				<from>input/workflow</from>
+				<to>workflow</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7cd34ce0-4fed-460b-b0f7-8ddbb9f3846d" fixedValue="false" optional="false" mask="false">
+				<from>input/connectionId</from>
+				<to>connectionId</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+	</steps>
+</sequence>

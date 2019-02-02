@@ -1,0 +1,4 @@
+<structure interface="be.nabu.eai.module.workflow.provider.WorkflowManager.mergeDefinition" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+</structure>

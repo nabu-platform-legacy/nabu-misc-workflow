@@ -1,0 +1,11 @@
+<structure name="pipeline">
+    <structure name="input">
+        <structure definition="nabu.misc.workflow.types.WorkflowInstance" name="workflow"/>
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+    </structure>
+    <structure name="output"/>
+    <field maxOccurs="unbounded" name="stateIds" type="java.lang.String"/>
+    <field name="rowCount" type="java.lang.Long"/>
+    <structure definition="be.nabu.eai.module.workflow.WorkflowState" maxOccurs="unbounded" name="states"/>
+</structure>

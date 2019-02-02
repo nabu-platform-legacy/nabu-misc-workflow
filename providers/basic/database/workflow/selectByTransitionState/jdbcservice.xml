@@ -3,6 +3,7 @@
 	<sql>select
 	id,
 	definition_id,
+	version,
 	parent_id,
 	batch_id,
 	context_id,
@@ -15,7 +16,7 @@
 	environment,
 	transition_state,
 	state_id
-from workflow_instances $join
+from ~workflow_instances $join
 where transition_state = :transitionState
 and definition_id = :definitionId
 and (:from is null or started &gt; :from)

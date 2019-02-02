@@ -1,6 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<sql>select count(wf.id) as total
-from workflow_instances wf $join
+from ~workflow_instances wf $join
 where (:transitionState is null or wf.transition_state = :transitionState)
 and (:definitionId is null or wf.definition_id = :definitionId)
 and (:stateId is null or wf.state_id = :stateId)

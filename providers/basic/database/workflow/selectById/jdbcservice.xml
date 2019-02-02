@@ -3,6 +3,7 @@
 	<sql>select
 	id,
 	definition_id,
+	version,
 	parent_id,
 	batch_id,
 	context_id,
@@ -15,6 +16,6 @@
 	environment,
 	transition_state,
 	state_id
-from workflow_instances
+from ~workflow_instances
 where id=:workflowId</sql>
 </jdbcService>
