@@ -26,7 +26,7 @@ Vue.view("workflow-graphic", {
 			var margin = {top: 20, right: 55, bottom: 30, left: 50};
 			var svg = d3.select(this.$refs.svg),
 				width = this.$el.offsetWidth - margin.right - margin.left,
-				height = this.$el.offsetHeight - 30;
+				height = this.$el.offsetHeight - margin.top - margin.bottom;
 			
 			svg.attr('width', width + margin.left + margin.right)
 				.attr('height', height + margin.top + margin.bottom);
