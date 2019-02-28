@@ -1,0 +1,4 @@
+<structure name="workflowInstancePropertyList">
+    <structure definition="nabu.misc.workflow.manage.rest.instance.property.workflowInstanceProperty" maxOccurs="unbounded" minOccurs="0" name="workflowInstancePropertys"/>
+    <structure definition="nabu.services.jdbc.types.Page" minOccurs="0" name="page"/>
+</structure>

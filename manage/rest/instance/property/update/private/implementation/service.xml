@@ -1,0 +1,98 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="d5f31a9b-746c-42a8-99ec-a525f1c887d1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="e1ebd7e9-14d0-44f9-a4cd-3d22702bd0af">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="f87bba93-dc63-48e3-957a-431b0110c505"
+				serviceId="nabu.misc.workflow.providers.basic.database.properties.selectById"
+				resultName="resultb96949fc61d844d594bf7261efc66095"
+				temporaryMapping="true"
+				x="61"
+				y="103"
+				invocationOrder="0"
+				asynchronous="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0690c9c8-7aa7-4fa3-9ac7-c10d0ee3a3d2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/workflowId</from>
+				<to>parameters/workflowId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="49d1aea9-7eb1-4456-b938-a02f95798361"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/propertyId</from>
+				<to>parameters/id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e1b040d0-e511-44d4-9afe-6ae9a1acc5a1"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultb96949fc61d844d594bf7261efc66095/results[0]</from>
+			<to>property</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			label="!property"
+			id="febc25bc-2678-4102-ac3f-d8c3560c2ff1"
+			code="404" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			comment="Map updates"
+			id="e738cf56-e69c-421d-87b9-d88b72ffb3d2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="629ad55f-ddf3-4984-ad38-6260544de919"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/content/key</from>
+			<to>property/key</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="82ce6b4c-a451-4c7c-a2dc-5e1d62cd729e"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/content/value</from>
+			<to>property/value</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="4b0df18a-7ce1-4996-967c-8574749dfa12">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="a339d8a8-6f26-4919-bf22-b6aef84ee894"
+				serviceId="nabu.misc.workflow.providers.basic.database.properties.update"
+				resultName="resulte09487b997384ef1bf3e7dc59d52d8c2"
+				temporaryMapping="true"
+				x="24"
+				y="78"
+				invocationOrder="0"
+				asynchronous="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ec827af2-c6e8-4575-adf4-a59ff6c9ada0"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>property</from>
+				<to>parameters[0]</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

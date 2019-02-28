@@ -1,0 +1,12 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.misc.workflow.types.WorkflowInstanceProperty</outputDefinition>
+	<sql>select
+	 wip.key,
+	 wip.value,
+	 wip.id,
+	 wip.workflow_id,
+	 wip.transition_id
+from ~workflow_instance_properties wip
+where wip.id = :id
+	and wip.workflow_id = :workflowId</sql>
+</jdbcService>

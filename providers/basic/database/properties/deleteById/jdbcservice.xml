@@ -1,0 +1,5 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>delete from ~workflow_instance_properties wip
+where wip.id = :id
+	and wip.workflow_id = :workflowId</sql>
+</jdbcService>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restInterface>
+    <method>DELETE</method>
+    <path>/instance/{workflowId}/property/{propertyId}</path>
+    <role>manager</role>
+    <lenient>false</lenient>
+    <webApplicationId>false</webApplicationId>
+    <language>false</language>
+    <allowFormBinding>false</allowFormBinding>
+    <caseInsensitive>false</caseInsensitive>
+    <cache>false</cache>
+    <allowCookiesWithoutReferer>false</allowCookiesWithoutReferer>
+    <allowCookiesWithExternalReferer>false</allowCookiesWithExternalReferer>
+    <request>false</request>
+    <allowHeaderAsQueryParameter>false</allowHeaderAsQueryParameter>
+    <useServerCache>false</useServerCache>
+    <source>false</source>
+</restInterface>

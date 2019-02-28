@@ -7,4 +7,7 @@
     <webFragments>nabu.misc.workflow.manage.rest.transition.attachment</webFragments>
     <webFragments>nabu.misc.workflow.manage.rest.instance.attachment</webFragments>
     <webFragments>nabu.misc.workflow.manage.rest.dashboard.byTransitionState</webFragments>
+    <webFragments>nabu.misc.workflow.manage.rest.instance.property.create</webFragments>
+    <webFragments>nabu.misc.workflow.manage.rest.instance.property.delete</webFragments>
+    <webFragments>nabu.misc.workflow.manage.rest.instance.property.update</webFragments>
 </webModule>

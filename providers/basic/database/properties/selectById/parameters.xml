@@ -1,0 +1,4 @@
+<structure name="parameter">
+    <field name="id" type="java.lang.String"/>
+    <field name="workflowId" type="java.lang.String"/>
+</structure>

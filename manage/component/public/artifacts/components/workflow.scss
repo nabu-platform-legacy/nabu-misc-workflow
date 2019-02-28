@@ -1,0 +1,11 @@
+.workflow-graphic {
+	.state {
+		fill: #fafafa;
+		stroke-width: 1px;
+		stroke: #aaa;
+		&.current-state {
+			stroke: #5a6291;
+			fill: #ebedf9;
+		}
+	}
+}

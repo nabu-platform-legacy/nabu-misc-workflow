@@ -1,0 +1,5 @@
+<structure name="workflowInstanceProperty" superType="nabu.misc.workflow.manage.rest.instance.property.workflowInstancePropertyInput">
+    <field name="id" type="java.lang.String"/>
+    <field name="workflowId" type="java.lang.String"/>
+    <field name="transitionId" type="java.lang.String"/>
+</structure>
