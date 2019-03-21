@@ -8,6 +8,10 @@ Vue.view("workflow-graphic", {
 		stateId: {
 			type: String,
 			required: false
+		},
+		transitionId: {
+			type: String,
+			required: false
 		}
 	},
 	computed: {
@@ -95,7 +99,6 @@ Vue.view("workflow-graphic", {
 						//.style("stroke", "#ccc");
 					
 					if (state.id == self.stateId) {
-					console.log("state is", state.id, self.stateId);
 						rect.attr("class", "state current-state");
 					}
 						
@@ -115,28 +118,64 @@ Vue.view("workflow-graphic", {
 						state.transitions.forEach(function(transition) {
 							var to = states[transition.targetStateId];
 							if (to) {
-								var source = self.selectClosestToRect(transition.x, transition.y, states[state.id]);
-								var target = self.selectClosestToRect(transition.x, transition.y, to);
+								var transitionX = transition.x / scaleX;
+								var transitionY = transition.y / scaleY;
+								
+								var source = self.selectClosestToRect(transitionX, transitionY, states[state.id]);
+								var target = self.selectClosestToRect(transitionX, transitionY, to);
 								
 								var path = d3.path();
 								path.moveTo(source.x, source.y);
 								// the transition x,y coordinates are for a circle to be drawn, here we are using it for a point in a line
 								// that means positioning it is slightly tricky business height wise, this is a visually correct approximation
-								path.lineTo(transition.x / scaleX, (transition.y / scaleY) + (to.height / 4));
+								//path.lineTo(transitionX, transitionY + (to.height / 4));
+								path.lineTo(transitionX, transitionY);
 								path.lineTo(target.x, target.y);
 								// when using the quadratic, there are no vertexes for the marker-mid to hang on to: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-mid
 								// the marker start and end are not entirely readable
 								//path.quadraticCurveTo(transition.x / scaleX, transition.y / scaleY, target.x, target.y);
 								//path.closePath();
 								
+								var line = svg.append("path")
+									.attr("d", path.toString())
+									//.style("fill", "none")
+									//.style("stroke-width", "1px")
+									//.style("stroke", "#ccc")
+									.attr("marker-mid", "url(#arrow)")
+									//.attr("marker-end", "url(#arrow)")
+									//.attr("marker-start", "url(#arrow)");
+								
+								if (transition.id == self.transitionId) {
+									line.attr("class", "transition current-transition");
+								}
+								else {
+									line.attr("class", "transition");
+								}
+							}
+						});
+					}
+				})
+				
+				// also draw the extensions
+				definition.states.forEach(function(state) {
+					if (state.extensions) {
+						state.extensions.forEach(function(extension) {
+							var to = states[extension];
+							var from = states[state.id];
+							if (to && from) {
+								var source = self.selectClosestToRect(from.x, from.y, to);
+								var target = self.selectClosestToRect(to.x, to.y, from);
+								
+								var path = d3.path();
+								path.moveTo(source.x, source.y);
+								path.lineTo(target.x, target.y);
 								svg.append("path")
 									.attr("d", path.toString())
 									.style("fill", "none")
 									.style("stroke-width", "1px")
-									.style("stroke", "#ccc")
-									.attr("marker-mid", "url(#arrow)")
-									//.attr("marker-end", "url(#arrow)")
-									//.attr("marker-start", "url(#arrow)");
+									.style("stroke", "blue")
+									.attr("stroke-dasharray", 7)
+									.attr("marker-mid", "url(#arrow)");
 							}
 						});
 					}
