@@ -66,10 +66,10 @@ Vue.view("workflow-graphic", {
 					if (state.transitions) {
 						state.transitions.forEach(function(transition) {
 							if (transition.x > maxX) {
-								maxX = state.x + 50;
+								maxX = transition.x + 50;
 							}
 							if (transition.y > maxY) {
-								maxY = state.y + 50;
+								maxY = transition.y + 50;
 							}
 						});
 					}
