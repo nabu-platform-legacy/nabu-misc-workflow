@@ -1,0 +1,12 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<inputDefinition>nabu.misc.workflow.types.WorkflowBatchInstance</inputDefinition>
+	<sql>update ~workflow_batch_instances set
+	workflow_id = :workflowId,
+	transition_id = :transitionId,
+	system_id = :systemId,
+	started = :started,
+	created = :created,
+	stopped = :stopped,
+	state = :state
+ where id = :id</sql>
+</jdbcService>

@@ -1,0 +1,8 @@
+<structure interface="be.nabu.eai.module.workflow.provider.WorkflowManager.calculateBatchState" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <field maxOccurs="unbounded" name="transitionStates" type="java.lang.String"/>
+    <field name="amountOfStates" type="java.lang.Integer"/>
+    <field maxOccurs="unbounded" name="runningStates" type="java.lang.String"/>
+    <structure definition="nabu.misc.workflow.types.WorkflowBatchInstance" minOccurs="0" name="batch"/>
+</structure>

@@ -1,0 +1,4 @@
+<structure name="path">
+    <field name="definitionId" type="java.lang.String"/>
+    <field name="stateId" type="java.lang.String"/>
+</structure>

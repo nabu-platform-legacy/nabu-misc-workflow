@@ -1,0 +1,146 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="01272a5b-440c-4efd-87a6-e22a5be148ba">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			comment="Get current and assume we can update"
+			id="dcbe39c6-3c42-4c10-97d5-8c8a64da956d">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="2f13efed-1aae-4e95-aaa1-f4c259ea4f56"
+				serviceId="nabu.misc.workflow.providers.basic.database.batch.selectForUpdate"
+				resultName="result0629f1da39374a3d8096728f4df88331"
+				temporaryMapping="true"
+				x="85"
+				y="64"
+				invocationOrder="0"
+				asynchronous="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b8afd360-2158-471f-a815-5c4783a35187"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="33522f95-de2d-46ad-8076-e7e18c0c7d35"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/transactionId</from>
+				<to>transaction</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2788c8b0-facb-4aa5-b708-1aa691c14dcb"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/instance/id</from>
+				<to>parameters/batchId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="97294af3-c588-41c5-a466-b7163a0a979c"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result0629f1da39374a3d8096728f4df88331/results[0]</from>
+			<to>current</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="d45e9452-1cc5-4d63-a679-bf01b2a0fac9"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>true</from>
+			<to>update</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			label="input/instance/state == &quot;WAITING&quot; &amp;&amp; current/state != &quot;RUNNING&quot;"
+			comment="We can't update to stopped from any other state"
+			id="7274db63-4a5b-4d6e-ae01-1e2f47eb8f47">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="c989701c-a747-4974-99a5-eeae5ad24c4a"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>false</from>
+			<to>update</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			label="update"
+			id="bc44aca7-a529-4610-a0ba-261f8c91f928">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="edfdd2ae-29c2-4319-92a5-d090c695a0ad"
+				serviceId="nabu.misc.workflow.providers.basic.database.batch.update"
+				resultName="result82e9ca24f82b4db3991be9ac529b677f"
+				temporaryMapping="true"
+				x="72"
+				y="70"
+				invocationOrder="0"
+				asynchronous="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f8b2b783-4a9b-40ae-8703-e5ee599875b2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9f95045a-97b8-46f5-8759-e3c71221cd8e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/transactionId</from>
+				<to>transaction</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="50755898-0d53-426f-a905-41905fd1395e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/instance</from>
+				<to>parameters[0]</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="084d3aaf-cb6b-4f86-9434-53614f62bca6"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result82e9ca24f82b4db3991be9ac529b677f/rowCount</from>
+			<to>rowCount</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			comment="Only successful if we have a row count"
+			id="88374725-2554-4c0f-85d8-bb31105f1225">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="3d83d61e-562d-42fc-86b7-263fd7bde4f4"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>=rowCount = 1</from>
+			<to>output/succeeded</to>
+		</steps>
+	</steps>
+</sequence>

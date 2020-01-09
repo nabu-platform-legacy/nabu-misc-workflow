@@ -1,0 +1,15 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.misc.workflow.types.WorkflowBatchInstance</outputDefinition>
+	<sql>select
+	 wbi.id,
+	 wbi.workflow_id,
+	 wbi.transition_id,
+	 wbi.system_id,
+	 wbi.started,
+	 wbi.created,
+	 wbi.stopped,
+	 wbi.state
+from ~workflow_batch_instances wbi
+where wbi.id = :batchId
+for update</sql>
+</jdbcService>

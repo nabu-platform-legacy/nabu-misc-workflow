@@ -1,0 +1,194 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="a35c0347-4c17-469a-9cbc-d8edbe6bc6c1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="144a1c25-7836-4ae6-bf8d-ec5a797a383d">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="97f05a2d-d542-4bd2-b248-f3dd404a9378"
+				serviceId="nabu.misc.workflow.providers.basic.database.batch.selectById"
+				resultName="result2b72b60f7bc74c088607480ec23a6bf1"
+				temporaryMapping="true"
+				x="133"
+				y="55"
+				invocationOrder="0"
+				asynchronous="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6cb3cfba-edd8-4236-802c-b93f80998c5b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e850af6f-5fb8-4cf3-ba77-051dd65c2f25"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/batchId</from>
+				<to>parameters/batchId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="9ae15a52-233c-4044-b884-eb8e3faf69ad"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result2b72b60f7bc74c088607480ec23a6bf1/results[0]</from>
+			<to>batch</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="575f6cca-b137-46ff-b9fe-76a360e3bb19"
+			query="batch/state">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+				disabled="false"
+				label="&quot;RUNNING&quot;"
+				comment="If the batch is still running, we have to calculate"
+				id="b3fc670b-4c66-4573-bc53-a4dedc889462">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="9b70c2bd-829d-4e4a-bfac-0495648fc783">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="389f637a-75ac-4561-9f0b-1fbf021f5323"
+						serviceId="nabu.misc.workflow.providers.basic.database.batch.selectWorkflowStates"
+						resultName="resultcb268ab8218f40c086f5b34ec8eadbb0"
+						temporaryMapping="true"
+						x="62"
+						y="35"
+						invocationOrder="0"
+						asynchronous="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="d5f86e8a-fb55-41e5-a9f6-d34bac305ad6"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>input/connectionId</from>
+						<to>connection</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="284bbe62-d314-4944-b467-19d6dad6091e"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>input/batchId</from>
+						<to>parameters/batchId</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="528933f1-edb8-4e56-b3df-d2ef09353464"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>resultcb268ab8218f40c086f5b34ec8eadbb0/results/transitionState</from>
+					<to>transitionStates</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					comment="Remove final states (succeeded &amp; failed)"
+					id="f4fd8f9e-43f5-460a-a774-083ded2c09fc">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="2a0a906e-affe-4254-8dba-da3692f772ec"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>transitionStates[$this != "SUCCEEDED" &amp;&amp; $this != "FAILED"]</from>
+					<to>runningStates</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					comment="Get amount of states"
+					id="070fa855-7f29-498b-aff2-aa5a19340d9c">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="99e6d459-45b2-4bb8-93e3-2de23cc412cd"
+						serviceId="nabu.utils.List.size"
+						resultName="result40dfbca09c8242d29a5642a204536968"
+						temporaryMapping="true"
+						x="45"
+						y="104"
+						invocationOrder="0"
+						asynchronous="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="e1787fdd-ad4d-4758-8f38-2fd2dfd79790"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>runningStates</from>
+						<to>list</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="caf3aacb-dc19-40c7-bf81-e36bb05a2183"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>result40dfbca09c8242d29a5642a204536968/size</from>
+					<to>amountOfStates</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+					disabled="false"
+					id="13ac52c2-1625-41c7-8291-199259f612a0">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						disabled="false"
+						label="amountOfStates &gt; 0"
+						comment="Any non-final states"
+						id="83fe04f3-7eb0-402c-99b8-db18d7bdc632">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="d9a52304-460e-490c-953c-216efb4ca88d"
+							mask="false"
+							optional="false"
+							fixedValue="true">
+						<from>RUNNING</from>
+						<to>output/response</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						disabled="false"
+						comment="Done"
+						id="c66dc727-de29-4bbe-a49c-8b8083413d99">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="bd51fe4e-43fc-486d-b116-f56ff1d33e4c"
+							mask="false"
+							optional="false"
+							fixedValue="true">
+						<from>STOPPED</from>
+						<to>output/response</to>
+					</steps>
+				</steps>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				comment="Otherwise, take batch state"
+				id="09ebefba-1941-4d69-9eaa-54a5caace5f1">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="a85a8d53-36ad-4bfd-b624-05e8c2ed05c0"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>batch/state</from>
+				<to>output/response</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

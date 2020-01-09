@@ -1,0 +1,5 @@
+<structure name="query">
+    <field minOccurs="0" name="correlationId" type="java.lang.String"/>
+    <field minOccurs="0" name="contextId" type="java.lang.String"/>
+    <field minOccurs="0" name="groupId" type="java.lang.String"/>
+</structure>

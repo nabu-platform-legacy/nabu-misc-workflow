@@ -10,4 +10,7 @@
     <webFragments>nabu.misc.workflow.manage.rest.instance.property.create</webFragments>
     <webFragments>nabu.misc.workflow.manage.rest.instance.property.delete</webFragments>
     <webFragments>nabu.misc.workflow.manage.rest.instance.property.update</webFragments>
+    <webFragments>nabu.misc.workflow.manage.rest.definition.definitions</webFragments>
+    <webFragments>nabu.misc.workflow.manage.rest.definition.initialTransitions</webFragments>
+    <webFragments>nabu.misc.workflow.manage.rest.instance.createWithAttachment</webFragments>
 </webModule>

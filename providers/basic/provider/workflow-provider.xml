@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <workflowProvider>
+    <calculateBatchState>nabu.misc.workflow.providers.basic.services.calculateBatchState</calculateBatchState>
+    <createBatch>nabu.misc.workflow.providers.basic.services.createBatch</createBatch>
     <createTransition>nabu.misc.workflow.providers.basic.services.createTransition</createTransition>
     <createWorkflow>nabu.misc.workflow.providers.basic.services.createWorkflow</createWorkflow>
     <createWorkflowProperties>nabu.misc.workflow.providers.basic.services.createWorkflowProperties</createWorkflowProperties>
     <getAmountOfWorkflows>nabu.misc.workflow.providers.basic.services.getAmountOfWorkflows</getAmountOfWorkflows>
+    <getBatch>nabu.misc.workflow.providers.basic.services.getBatch</getBatch>
+    <getBatches>nabu.misc.workflow.providers.basic.services.getBatches</getBatches>
     <getTransitions>nabu.misc.workflow.providers.basic.services.getTransitions</getTransitions>
     <getWorkflow>nabu.misc.workflow.providers.basic.services.getWorkflow</getWorkflow>
     <getWorkflowProperties>nabu.misc.workflow.providers.basic.services.getWorkflowProperties</getWorkflowProperties>
     <getWorkflows>nabu.misc.workflow.providers.basic.services.getWorkflows</getWorkflows>
+    <updateBatch>nabu.misc.workflow.providers.basic.services.updateBatch</updateBatch>
     <updateTransition>nabu.misc.workflow.providers.basic.services.updateTransition</updateTransition>
     <updateWorkflow>nabu.misc.workflow.providers.basic.services.updateWorkflow</updateWorkflow>
     <updateWorkflowProperties>nabu.misc.workflow.providers.basic.services.updateWorkflowProperties</updateWorkflowProperties>

@@ -1,0 +1,46 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="83ec0649-5ab5-4112-b752-27f94e76588f">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="affe792f-a1c2-4576-af04-6b7e1b29a1c5">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="b0d7a8e9-fbc6-452b-9e12-28dedecbccaa"
+				serviceId="nabu.misc.workflow.providers.basic.database.batch.selectById"
+				resultName="resultc4fab0954e2e40e3a1f0deb08af09f36"
+				temporaryMapping="true"
+				x="26"
+				y="43"
+				invocationOrder="0"
+				asynchronous="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4da1890e-eda7-4118-8b0c-a9d1b164d711"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6556a477-4beb-4286-b51d-f36583a680ec"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/batchId</from>
+				<to>parameters/batchId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="099df428-a421-4597-aecb-6277ffbd0b37"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultc4fab0954e2e40e3a1f0deb08af09f36/results[0]</from>
+			<to>output/batch</to>
+		</steps>
+	</steps>
+</sequence>

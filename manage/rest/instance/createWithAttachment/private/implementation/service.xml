@@ -1,0 +1,159 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="9bf1cdd2-3551-432a-86f4-2bdb9a2221ec">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="a962642c-28c2-4b20-9da4-073175fc24a2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="e9e323a6-290c-4495-b434-a14f7428a2ae"
+				serviceId="nabu.misc.workflow.Services.getInitialStates"
+				resultName="result5e1c65726a294270bf83310b4e7616d5"
+				temporaryMapping="true"
+				x="15"
+				y="99"
+				invocationOrder="0"
+				asynchronous="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6e836913-1bfb-4379-bc64-75e7a795694c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/definitionId</from>
+				<to>definitionId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="49d0d086-9442-4539-8467-7bfa8f12a1bb"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result5e1c65726a294270bf83310b4e7616d5/states/transitions[id = /input/path/transitionId]</from>
+			<to>transition</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			label="!transition"
+			id="11841dc3-d3a7-433d-b2b4-d9ec832eca3a"
+			message="Invalid transition" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			comment="Start workflow"
+			id="a6154c30-5f15-4cb6-ab97-998f2f8563e5">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="74d64efe-5829-4da5-b6e1-24672e853252"
+				serviceId="nabu.misc.workflow.Services.start"
+				resultName="resultc86bf0edc91b4786a180a76d702c336f"
+				temporaryMapping="true"
+				x="534"
+				y="154"
+				invocationOrder="1"
+				asynchronous="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="74bf5484-2291-4c68-a949-701a848b54f6"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/definitionId</from>
+				<to>definitionId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="dc0a3199-0e21-46c9-874f-394e816af5ec"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>transition/id</from>
+				<to>transitionId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="7d3d857e-803f-41fd-8ee2-5ce87355d350"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/correlationId</from>
+				<to>correlationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="5507bc7b-85e4-40ce-884c-108eef5734c3"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/contextId</from>
+				<to>contextId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e6ad8233-abb3-48f5-9094-67bf2bb2546e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/groupId</from>
+				<to>groupId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="eca0e471-dbda-4aad-9c08-14355deabb20"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultd69b103482284dd99ca922c8bb5561df/uri</from>
+				<to>uri</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="88501daf-2b90-49be-b3ca-369efd8fadf9"
+				serviceId="nabu.frameworks.datastore.Services.store"
+				resultName="resultd69b103482284dd99ca922c8bb5561df"
+				temporaryMapping="true"
+				x="65"
+				y="349"
+				invocationOrder="0"
+				asynchronous="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2daea660-265b-485f-80b3-7d4cf27172b1"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/content</from>
+				<to>stream</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="8b19ef3a-3516-4941-8126-4338739a874e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>transition/name</from>
+				<to>name</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d1d0897a-f53c-4c94-a964-c5ee3175cf6b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/definitionId</from>
+				<to>context</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="7df39159-b95a-4518-81ef-74bb6ad53675"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultc86bf0edc91b4786a180a76d702c336f/workflowId</from>
+			<to>output/content/workflowId</to>
+		</steps>
+	</steps>
+</sequence>

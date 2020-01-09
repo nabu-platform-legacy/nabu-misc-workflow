@@ -1,0 +1,5 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>select distinct wi.transition_state
+from ~workflow_instances wi
+where wi.batch_id = :batchId</sql>
+</jdbcService>
