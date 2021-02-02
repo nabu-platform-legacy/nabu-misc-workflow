@@ -1,4 +1,8 @@
 Vue.view("workflow-graphic", {
+	icon: "images/workflow/workflow-large.png",
+	description: "A visual representation of a workflow",
+	name: "Workflow Diagram",
+	category: "workflow",
 	template: "<div class='workflow-graphic'><svg ref='svg'></svg></div>",
 	props: {
 		definitionId: {
@@ -121,21 +125,37 @@ Vue.view("workflow-graphic", {
 								var transitionX = transition.x / scaleX;
 								var transitionY = transition.y / scaleY;
 								
-								var source = self.selectClosestToRect(transitionX, transitionY, states[state.id]);
-								var target = self.selectClosestToRect(transitionX, transitionY, to);
-								
-								var path = d3.path();
-								path.moveTo(source.x, source.y);
-								// the transition x,y coordinates are for a circle to be drawn, here we are using it for a point in a line
-								// that means positioning it is slightly tricky business height wise, this is a visually correct approximation
-								//path.lineTo(transitionX, transitionY + (to.height / 4));
-								path.lineTo(transitionX, transitionY);
-								path.lineTo(target.x, target.y);
-								// when using the quadratic, there are no vertexes for the marker-mid to hang on to: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-mid
-								// the marker start and end are not entirely readable
-								//path.quadraticCurveTo(transition.x / scaleX, transition.y / scaleY, target.x, target.y);
-								//path.closePath();
-								
+								var path = null;
+								// if we have the new coordinates, draw using them, they are more accurate
+								if (transition.line1FromX) {
+									var source = self.selectClosestToRect(transition.line1FromX / scaleX, transition.line1FromY / scaleY, states[state.id]);
+									var target = self.selectClosestToRect(transition.line2ToX / scaleX, transition.line2ToY / scaleY, to);
+									
+									path = d3.path();
+									path.moveTo(source.x, source.y);
+									path.lineTo(transition.line1ToX / scaleX, transition.line1ToY / scaleY);
+//									path.lineTo(transitionX, transitionY);
+									path.lineTo(transition.line2FromX / scaleX, transition.line2FromY / scaleY);
+									path.lineTo(target.x, target.y);
+								}
+								// otherwise, draw oldschool!
+								else {
+									var source = self.selectClosestToRect(transitionX, transitionY, states[state.id]);
+									var target = self.selectClosestToRect(transitionX, transitionY, to);
+									
+									path = d3.path();
+									path.moveTo(source.x, source.y);
+									// the transition x,y coordinates are for a circle to be drawn, here we are using it for a point in a line
+									// that means positioning it is slightly tricky business height wise, this is a visually correct approximation
+									//path.lineTo(transitionX, transitionY + (to.height / 4));
+									path.lineTo(transitionX, transitionY);
+									path.lineTo(target.x, target.y);
+									// when using the quadratic, there are no vertexes for the marker-mid to hang on to: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-mid
+									// the marker start and end are not entirely readable
+									//path.quadraticCurveTo(transition.x / scaleX, transition.y / scaleY, target.x, target.y);
+									//path.closePath();
+									
+								}
 								var line = svg.append("path")
 									.attr("d", path.toString())
 									//.style("fill", "none")

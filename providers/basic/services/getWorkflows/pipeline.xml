@@ -1,6 +1,7 @@
 <structure interface="be.nabu.eai.module.workflow.provider.WorkflowManager.getWorkflows" name="pipeline">
     <structure name="input">
         <field maxOccurs="unbounded" minOccurs="0" name="orderBy" type="java.lang.String"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="workflowId" type="java.lang.String"/>
     </structure>
     <structure name="output">
         <field minOccurs="0" name="totalRowCount" type="java.lang.Long"/>

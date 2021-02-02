@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataModel>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.misc.workflow.types.WorkflowBatchInstance</type>
+        <x>41</x>
+        <y>52</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.misc.workflow.types.WorkflowInstance</type>
+        <x>46</x>
+        <y>362</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.misc.workflow.types.WorkflowInstanceProperty</type>
+        <x>508</x>
+        <y>112</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.misc.workflow.types.WorkflowTransitionInstance</type>
+        <x>501</x>
+        <y>365</y>
+    </entries>
+</dataModel>

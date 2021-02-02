@@ -1,0 +1,29 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="8dc457e1-c70e-4583-9fea-a15fad010989">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="ee4ca3c9-2296-4163-9b61-15eade7a74cb">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="62a084ed-2aa0-41bd-849b-6c3f9dc40172"
+				serviceId="nabu.misc.workflow.Services.retry"
+				resultName="resultbac8a2762dde40ca8e3d502be8efe5ac"
+				temporaryMapping="true"
+				x="59"
+				y="8"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="857e6794-b57a-4e3f-837e-e83635abb1bb"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/workflowId</from>
+				<to>workflowId</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

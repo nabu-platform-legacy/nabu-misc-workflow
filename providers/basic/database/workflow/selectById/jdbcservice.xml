@@ -1,21 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<outputDefinition>nabu.misc.workflow.types.WorkflowInstance</outputDefinition>
-	<sql>select
-	id,
-	definition_id,
-	version,
-	parent_id,
-	batch_id,
-	context_id,
-	group_id,
-	correlation_id,
-	workflow_type,
-	uri,
-	started,
-	stopped,
-	environment,
-	transition_state,
-	state_id
-from ~workflow_instances
-where id=:workflowId</sql>
+	<sql>select *
+from ~workflow_instances wi
+where wi.id=:workflowId</sql>
 </jdbcService>

@@ -1,0 +1,15 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <field name="workflowId" type="java.lang.String"/>
+        <field comment="A list of identifiable properties that are not marked as such. E.g. if you have a field &quot;lastName&quot; in your workflow properties, fill in &quot;lastName&quot;. Nest using &quot;/&quot;." maxOccurs="unbounded" minOccurs="0" name="identifiableProperties" type="java.lang.String"/>
+    </structure>
+    <structure name="output"/>
+    <structure collectionName="WorkflowInstances" definition="nabu.misc.workflow.types.WorkflowInstance" minOccurs="0" name="workflow"/>
+    <structure definition="nabu.utils.types.ParameterDescription" maxOccurs="unbounded" minOccurs="0" name="parameters"/>
+    <structure collectionName="WorkflowInstanceProperties" definition="nabu.misc.workflow.types.WorkflowInstanceProperty" maxOccurs="unbounded" minOccurs="0" name="existing"/>
+    <field minOccurs="0" name="standardizedKey" type="java.lang.String"/>
+    <structure collectionName="WorkflowInstanceProperties" definition="nabu.misc.workflow.types.WorkflowInstanceProperty" maxOccurs="unbounded" minOccurs="0" name="propertiesToDelete"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="propertyNames" type="java.lang.String"/>
+</structure>

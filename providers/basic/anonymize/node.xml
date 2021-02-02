@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-23T10:54:46.712+02:00" lastModified="2020-11-24T11:42:00.779+01:00" leaf="true" version="30">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.List.add</references>
+    <references>nabu.services.jdbc.Services.delete</references>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.misc.workflow.providers.basic.database.properties.selectByWorkflowId</references>
+    <references>nabu.misc.workflow.providers.basic.database.properties.delete</references>
+    <references>nabu.misc.workflow.types.WorkflowInstance</references>
+    <references>nabu.misc.workflow.providers.basic.database.workflow.selectById</references>
+    <references>nabu.utils.String.replace</references>
+    <references>nabu.utils.types.ParameterDescription</references>
+    <references>java.lang.String</references>
+    <references>nabu.misc.workflow.types.WorkflowInstanceProperty</references>
+    <references>nabu.utils.reflection.Type.describe</references>
+</node>

@@ -1,10 +1,12 @@
 be.nabu.libs.types.api.KeyValuePair [] properties ?= series()
 
-@return
-string join = string.join(string: " join workflow_instance_properties wf_" + properties/key + " on wf_" + properties/key + ".workflow_id = wf.id")
+encode = lambda(x, replace("[^\\w]+", "__", x))
 
 @return
-string where = string.join(string: " and wf_" + properties/key + ".key = :" + properties/key + "_key and wf_" + properties/key + ".value = :" + properties/key + "_value")
+string join = string.join(string: " join workflow_instance_properties wf_" + encode(properties/key) + " on wf_" + encode(properties/key) + ".workflow_id = wf.id")
 
 @return
-be.nabu.libs.types.api.KeyValuePair [] pairs = explode(lambda(x, series(structure(key: x/key + "_key", value: x/key), structure(key: x/key + "_value", value: x/value))), properties)
+string where = string.join(string: " and wf_" + encode(properties/key) + ".key = :" + encode(properties/key) + "_key and wf_" + encode(properties/key) + ".value = :" + encode(properties/key) + "_value")
+
+@return
+be.nabu.libs.types.api.KeyValuePair [] pairs = explode(lambda(x, series(structure(key: encode(x/key) + "_key", value: x/key), structure(key: encode(x/key) + "_value", value: x/value))), properties)

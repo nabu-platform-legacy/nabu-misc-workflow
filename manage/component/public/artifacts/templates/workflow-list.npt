@@ -1,0 +1,617 @@
+{ 
+	"category": "Workflow",
+	"name": "Workflow List",
+	"description": "An overview of all the workflows",
+	"icon": "images/workflow/workflow-large.png",
+	"content": {
+		"type": "page",
+		"content": {
+			"rows": [
+				{
+					"id": 1,
+					"cells": [
+						{
+							"id": 2,
+							"rows": [],
+							"alias": "data-table-list",
+							"bindings": {
+								"definitionId": null,
+								"from": null,
+								"until": null,
+								"stateId": null,
+								"transitionState": null,
+								"offset": null,
+								"limit": null,
+								"environment": null,
+								"parentId": null,
+								"contextId": null,
+								"correlationId": "page.correlationId",
+								"groupId": null,
+								"workflowType": null,
+								"batchId": null,
+								"property": null,
+								"workflowId": null,
+								"running": null,
+								"properties": null
+							},
+							"state": {
+								"orderBy": [
+									"started desc"
+								],
+								"filterPlaceHolder": null,
+								"filterType": "data-combo-filter",
+								"title": "Workflows",
+								"limit": "10",
+								"actions": [
+									{
+										"name": "selectWorkflow",
+										"icon": null,
+										"class": null,
+										"label": null,
+										"condition": null,
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									},
+									{
+										"name": "downloadWorkflowAttachment",
+										"icon": "fa-download ",
+										"class": null,
+										"label": null,
+										"condition": "!!state.record.uri",
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									},
+									{
+										"name": "retryWorkflow",
+										"icon": "fa-sync",
+										"class": "warning-text",
+										"label": null,
+										"condition": "state.record.transitionState == \"ERROR\"",
+										"refresh": true,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									},
+									{
+										"name": "failWorkflow",
+										"icon": "fa-times-circle",
+										"class": "danger-text",
+										"label": null,
+										"condition": "state.record.transitionState == \"ERROR\"",
+										"refresh": true,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									}
+								],
+								"filters": [
+									{
+										"name": "definitionId",
+										"label": "Definition",
+										"description": null,
+										"type": "enumeration-provider",
+										"enumerations": [],
+										"value": null,
+										"enumerationOperation": null,
+										"enumerationOperationLabel": null,
+										"enumerationOperationValue": null,
+										"enumerationOperationQuery": null,
+										"enumerationOperationBinding": {},
+										"textType": null,
+										"enumerationProvider": "workflow-definitions"
+									},
+									{
+										"name": "from",
+										"label": "From",
+										"description": null,
+										"type": "date",
+										"enumerations": [],
+										"value": null,
+										"enumerationOperation": null,
+										"enumerationOperationLabel": null,
+										"enumerationOperationValue": null,
+										"enumerationOperationQuery": null,
+										"enumerationOperationBinding": {},
+										"textType": null
+									},
+									{
+										"name": "until",
+										"label": "Until",
+										"description": null,
+										"type": "date",
+										"enumerations": [],
+										"value": null,
+										"enumerationOperation": null,
+										"enumerationOperationLabel": null,
+										"enumerationOperationValue": null,
+										"enumerationOperationQuery": null,
+										"enumerationOperationBinding": {},
+										"textType": null
+									},
+									{
+										"name": "running",
+										"label": "Running",
+										"description": null,
+										"type": "switch",
+										"enumerations": [],
+										"value": null,
+										"enumerationOperation": null,
+										"enumerationOperationLabel": null,
+										"enumerationOperationValue": null,
+										"enumerationOperationQuery": null,
+										"enumerationOperationBinding": {},
+										"textType": null
+									},
+									{
+										"name": "correlationId",
+										"label": "Correlation",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"enumerationOperation": null,
+										"enumerationOperationLabel": null,
+										"enumerationOperationValue": null,
+										"enumerationOperationQuery": null,
+										"enumerationOperationBinding": {},
+										"textType": null
+									},
+									{
+										"name": "groupId",
+										"label": "Group",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"enumerationOperation": null,
+										"enumerationOperationLabel": null,
+										"enumerationOperationValue": null,
+										"enumerationOperationQuery": null,
+										"enumerationOperationBinding": {},
+										"textType": null
+									}
+								],
+								"fields": [
+									{
+										"label": "Definition",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "definitionId",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": null,
+										"width": "1.2"
+									},
+									{
+										"label": null,
+										"fragments": [
+											{
+												"type": "data",
+												"key": "transitionState",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [
+											{
+												"class": "danger",
+												"condition": "state.record.transitionState == 'ERROR'"
+											},
+											{
+												"class": "success",
+												"condition": "state.record.transitionState == 'SUCCEEDED'"
+											},
+											{
+												"class": "warning",
+												"condition": "state.record.transitionState == 'FAILED'"
+											}
+										],
+										"hidden": null,
+										"width": "0.7"
+									},
+									{
+										"label": "State",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "stateId",
+												"content": null,
+												"format": "workflow-state",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": null,
+										"width": "0.7"
+									},
+									{
+										"label": "Context",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "contextId",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "Group",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "groupId",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "Runtime",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "started",
+												"content": null,
+												"format": "date",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {},
+												"dateFormat": "yyyy/MM/dd HH:mm",
+												"tag": "span",
+												"html": null,
+												"amountOfDecimals": null
+											},
+											{
+												"type": "text",
+												"content": " - ",
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": null,
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": "span",
+												"html": null,
+												"amountOfDecimals": null,
+												"multiline": false
+											},
+											{
+												"type": "data",
+												"content": null,
+												"format": "date",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "stopped",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": "HH:mm",
+												"tag": "span",
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": null
+									}
+								],
+								"updateOperation": null,
+								"updateBindings": {},
+								"multiselect": false,
+								"refreshOn": [],
+								"showRefresh": true,
+								"result": {
+									"id": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"definitionId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"parentId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"batchId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"contextId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"groupId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"correlationId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"workflowType": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"uri": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"started": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"stopped": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"environment": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"transitionState": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"stateId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"version": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"anonymized": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									}
+								},
+								"operation": "nabu.misc.workflow.manage.rest.instance.list",
+								"styles": [],
+								"autoRefresh": null,
+								"useNativeTable": true,
+								"comboFilter": {
+									"useTags": true
+								}
+							},
+							"target": "page",
+							"on": null,
+							"class": null,
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"clickEvent": {
+								"eventFields": [],
+								"name": null
+							}
+						}
+					],
+					"class": null,
+					"customId": null,
+					"instances": {},
+					"condition": null,
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				},
+				{
+					"id": 11,
+					"cells": [],
+					"class": null,
+					"customId": null,
+					"instances": {},
+					"condition": null,
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				},
+				{
+					"id": 3,
+					"cells": [
+						{
+							"id": 4,
+							"rows": [],
+							"alias": "workflow-detail",
+							"bindings": {
+								"properties": null,
+								"workflowId": "selectWorkflow.id"
+							},
+							"state": {
+								"orderBy": [],
+								"filterPlaceHolder": null,
+								"filterType": null,
+								"title": null,
+								"limit": 20,
+								"actions": [],
+								"filters": [],
+								"fields": [],
+								"updateOperation": null,
+								"updateBindings": {},
+								"multiselect": false,
+								"refreshOn": [],
+								"showRefresh": false,
+								"result": {}
+							},
+							"target": "page",
+							"on": "selectWorkflow",
+							"class": null,
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null
+						}
+					],
+					"class": null,
+					"customId": null,
+					"instances": {},
+					"condition": null,
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				}
+			],
+			"path": "/workflows",
+			"counter": 12,
+			"variables": [],
+			"query": [
+				"correlationId"
+			],
+			"actions": [
+				{
+					"name": "Fail Workflow",
+					"on": "failWorkflow",
+					"confirmation": "Are you sure you want to set this workflow to failed?",
+					"operation": "nabu.misc.workflow.manage.rest.instance.fail",
+					"route": null,
+					"anchor": null,
+					"bindings": {
+						"workflowId": "failWorkflow.id"
+					},
+					"chainEvent": {
+						"eventFields": [],
+						"name": null
+					}
+				},
+				{
+					"name": "Download Workflow Attachment",
+					"on": "downloadWorkflowAttachment",
+					"confirmation": null,
+					"operation": "nabu.misc.workflow.manage.rest.instance.attachment",
+					"route": null,
+					"anchor": null,
+					"bindings": {
+						"workflowId": "downloadWorkflowAttachment.id"
+					}
+				},
+				{
+					"name": "Retry Workflow",
+					"on": "retryWorkflow",
+					"confirmation": null,
+					"operation": "nabu.misc.workflow.manage.rest.instance.retry",
+					"route": null,
+					"event": null,
+					"anchor": null,
+					"bindings": {
+						"workflowId": "retryWorkflow.id"
+					},
+					"expandBindings": true,
+					"chainEvent": {
+						"eventFields": [],
+						"name": null
+					}
+				}
+			],
+			"label": "Workflow List",
+			"class": null,
+			"initial": false,
+			"menuX": 0,
+			"menuY": 0,
+			"states": [],
+			"category": "Workflow",
+			"name": "workflows-list",
+			"slow": false
+		}
+	}
+}

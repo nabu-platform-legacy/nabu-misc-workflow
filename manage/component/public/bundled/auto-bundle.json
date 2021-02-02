@@ -1,0 +1,10 @@
+{
+	"namespace": "nabu", 
+	"name": "workflow", 
+	"resources": {
+		"d3.json": {
+			"type": "bundle",
+			"url": "https://raw.githubusercontent.com/nabu-platform/web-component-d3-charts/master/bundle.json"
+		}
+	}
+}

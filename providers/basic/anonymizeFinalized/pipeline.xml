@@ -1,0 +1,13 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <field name="definitionId" type="java.lang.String"/>
+        <field comment="You can set a timerange, e.g. P1M, this means only workflows that have been finished for at least 1 month are anonymized" minOccurs="0" name="after" type="be.nabu.libs.types.base.Duration"/>
+        <field comment="A list of identifiable properties that are not marked as such. E.g. if you have a field &quot;lastName&quot; in your workflow properties, fill in &quot;lastName&quot;. Nest using &quot;/&quot;." maxOccurs="unbounded" minOccurs="0" name="identifiableProperties" type="java.lang.String"/>
+    </structure>
+    <structure name="output"/>
+    <field minOccurs="0" name="before" type="java.util.Date"/>
+    <structure definition="be.nabu.eai.module.workflow.WorkflowState" maxOccurs="unbounded" minOccurs="0" name="finalStates"/>
+    <structure collectionName="WorkflowInstances" definition="nabu.misc.workflow.types.WorkflowInstance" maxOccurs="unbounded" minOccurs="0" name="workflows"/>
+</structure>

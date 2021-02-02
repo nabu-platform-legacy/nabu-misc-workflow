@@ -15,7 +15,8 @@
 	stopped,
 	environment,
 	transition_state,
-	state_id
+	state_id,
+	anonymized
 from ~workflow_instances $join
 where transition_state = :transitionState
 and definition_id = :definitionId

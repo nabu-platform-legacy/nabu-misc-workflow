@@ -12,6 +12,7 @@
     <field name="contextId" type="java.lang.String"/>
     <field name="groupId" type="java.lang.String"/>
     <field name="workflowType" type="java.lang.String"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="workflowId" type="java.lang.String"/>
     <field name="running" type="java.lang.String"/>
     <field name="where" type="java.lang.String"/>
 </structure>

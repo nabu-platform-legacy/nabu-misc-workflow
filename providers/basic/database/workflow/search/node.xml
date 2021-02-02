@@ -1,1 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2018-05-18T20:20:45.208+02:00" lastModified="2018-09-28T12:41:26.209+02:00" leaf="false" version="23"><environmentId>hyperion</environmentId><hidden>false</hidden><properties/><references>java.lang.String</references><references>java.lang.Long</references><references>java.lang.Integer</references><references>java.lang.Boolean</references><references>nabu.misc.workflow.providers.basic.database.workflow.search.parameters</references><references>be.nabu.libs.types.api.KeyValuePair</references><references>nabu.misc.workflow.types.WorkflowInstance</references><references>java.lang.Long</references><references>java.lang.Boolean</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2018-05-18T20:20:45.208+02:00" lastModified="2020-12-10T09:50:09.677+01:00" leaf="false" version="27">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>java.lang.String</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Integer</references>
+    <references>java.lang.Boolean</references>
+    <references>nabu.misc.workflow.providers.basic.database.workflow.search.parameters</references>
+    <references>be.nabu.libs.types.api.KeyValuePair</references>
+    <references>nabu.misc.workflow.types.WorkflowInstance</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Boolean</references>
+</node>

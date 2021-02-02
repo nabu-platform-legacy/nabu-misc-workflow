@@ -14,7 +14,7 @@
     <field minOccurs="0" name="workflowType" type="java.lang.String"/>
     <field minOccurs="0" name="batchId" type="java.lang.String"/>
     <field maxOccurs="unbounded" minOccurs="0" name="property" type="java.lang.String"/>
-    <field minOccurs="0" name="workflowId" type="java.lang.String"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="workflowId" type="java.lang.String"/>
     <field minOccurs="0" name="running" type="java.lang.Boolean"/>
     <field maxOccurs="unbounded" minOccurs="0" name="orderBy" type="java.lang.String"/>
 </structure>

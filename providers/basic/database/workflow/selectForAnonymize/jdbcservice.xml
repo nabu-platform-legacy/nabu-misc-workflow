@@ -1,0 +1,10 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.misc.workflow.types.WorkflowInstance</outputDefinition>
+	<sql>select *
+from ~workflow_instances wi
+	join (select max(wti.stopped) as stopped, wti.workflow_id from ~workflow_transition_instances wti where stopped is not null group by wti.workflow_id) wti on wi.id = wti.workflow_id
+where wi.state_id = any(:stateIds)
+	and (wi.anonymized is null or wi.anonymized = false)
+	and wti.stopped &lt; :before
+</sql>
+</jdbcService>

@@ -1,0 +1,716 @@
+{ 
+	"category": "Workflow",
+	"name": "Workflow Detail",
+	"description": "The detail of a single workflow instance",
+	"icon": "images/workflow/workflow-large.png",
+	"content": {
+		"type": "page",
+		"content": {
+			"rows": [
+				{
+					"id": 12,
+					"cells": [
+						{
+							"id": 13,
+							"rows": [],
+							"alias": "workflow-graphic",
+							"bindings": {
+								"definitionId": "page.instance.workflow.definitionId",
+								"stateId": "page.instance.workflow.stateId"
+							},
+							"name": null,
+							"state": {},
+							"target": "page",
+							"on": null,
+							"class": null,
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": null
+						}
+					],
+					"class": null,
+					"customId": null,
+					"instances": {},
+					"condition": null,
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				},
+				{
+					"id": 1,
+					"cells": [
+						{
+							"id": 2,
+							"rows": [],
+							"alias": "data-table-list",
+							"bindings": {
+								"properties": null
+							},
+							"state": {
+								"orderBy": [
+									"definitionId"
+								],
+								"filterPlaceHolder": null,
+								"filterType": null,
+								"title": "Transitions",
+								"limit": 20,
+								"actions": [
+									{
+										"name": "viewErrorLog",
+										"icon": "fa-exclamation-circle",
+										"class": "danger-text",
+										"label": null,
+										"condition": "!!state.record.errorLog",
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									},
+									{
+										"name": "downloadTransitionAttachment",
+										"icon": "fa-download",
+										"class": null,
+										"label": null,
+										"condition": "!!state.record.uri",
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									}
+								],
+								"filters": [],
+								"fields": [
+									{
+										"label": "Transition",
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": "workflow-transition",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "definitionId",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "transitionState",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [
+											{
+												"class": "danger",
+												"condition": "state.record.transitionState == \"ERROR\""
+											},
+											{
+												"class": "success",
+												"condition": "state.record.transitionState == \"SUCCEEDED\""
+											}
+										],
+										"hidden": null
+									},
+									{
+										"label": "Timing",
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": "date",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "started",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": "HH:mm:ss",
+												"tag": "span",
+												"html": null,
+												"amountOfDecimals": null
+											},
+											{
+												"type": "text",
+												"content": " - ",
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": null,
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": "span",
+												"html": null,
+												"amountOfDecimals": null,
+												"multiline": false
+											},
+											{
+												"type": "data",
+												"content": null,
+												"format": "date",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "stopped",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": "HH:mm:ss",
+												"tag": "span",
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "Error Code",
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "errorCode",
+												"disabled": null,
+												"hidden": "",
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": null
+									}
+								],
+								"updateOperation": null,
+								"updateBindings": {},
+								"multiselect": false,
+								"refreshOn": [],
+								"showRefresh": false,
+								"result": {
+									"instance": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"id": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"definitionId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"workflowId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"parentId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"actorId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"systemId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"started": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"stopped": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"uri": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"log": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"code": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"errorLog": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"errorCode": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"sequence": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"transitionState": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"fromStateId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"toStateId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"batchId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									}
+								},
+								"array": "instance.transitions",
+								"autoRefresh": null,
+								"styles": [],
+								"class": "",
+								"useNativeTable": true
+							},
+							"target": "page",
+							"on": null,
+							"class": "",
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null
+						}
+					],
+					"class": null,
+					"customId": null,
+					"instances": {},
+					"condition": null,
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				},
+				{
+					"id": 11,
+					"cells": [
+						{
+							"id": 3,
+							"rows": [],
+							"alias": "data-table-list",
+							"bindings": {
+								"properties": null
+							},
+							"state": {
+								"orderBy": [
+									"value"
+								],
+								"filterPlaceHolder": null,
+								"filterType": null,
+								"title": "Properties",
+								"limit": 20,
+								"actions": [],
+								"filters": [],
+								"fields": [
+									{
+										"label": "Key",
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "key",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": null,
+										"width": "0.3"
+									},
+									{
+										"label": "Value",
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "value",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": null
+									}
+								],
+								"updateOperation": null,
+								"updateBindings": {},
+								"multiselect": false,
+								"refreshOn": [],
+								"showRefresh": false,
+								"result": {
+									"key": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"value": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"id": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"workflowId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"transitionId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									}
+								},
+								"array": "instance.properties",
+								"autoRefresh": null,
+								"styles": []
+							},
+							"target": "page",
+							"on": null,
+							"class": null,
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": "",
+							"result": {}
+						}
+					],
+					"class": null,
+					"customId": null,
+					"instances": {},
+					"condition": null,
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				},
+				{
+					"id": 4,
+					"cells": [
+						{
+							"id": 5,
+							"rows": [
+								{
+									"id": 7,
+									"cells": [
+										{
+											"id": 8,
+											"rows": [],
+											"alias": "page-fields",
+											"bindings": {},
+											"state": {
+												"class": null,
+												"fields": [
+													{
+														"label": null,
+														"fragments": [
+															{
+																"type": "data",
+																"content": null,
+																"format": "highlight",
+																"javascript": null,
+																"template": null,
+																"class": "code",
+																"key": "viewErrorLog.errorLog",
+																"disabled": null,
+																"hidden": null,
+																"form": {},
+																"dateFormat": null,
+																"tag": null,
+																"html": null,
+																"amountOfDecimals": null,
+																"clickEvent": {
+																	"eventFields": [],
+																	"name": null
+																}
+															}
+														],
+														"styles": [],
+														"hidden": null
+													}
+												]
+											},
+											"target": "page",
+											"on": null,
+											"class": null,
+											"customId": null,
+											"width": 1,
+											"height": null,
+											"instances": {},
+											"condition": null
+										}
+									],
+									"class": null,
+									"customId": null,
+									"instances": {},
+									"condition": null,
+									"direction": null,
+									"align": null,
+									"on": null,
+									"collapsed": false,
+									"name": null
+								},
+								{
+									"id": 9,
+									"cells": [
+										{
+											"id": 10,
+											"rows": [],
+											"alias": "page-actions",
+											"bindings": {},
+											"state": {
+												"class": "menu2",
+												"actions": [
+													{
+														"label": "Close",
+														"route": null,
+														"event": "$close",
+														"eventState": null,
+														"eventFixedState": null,
+														"hasFixedState": false,
+														"anchor": null,
+														"mask": false,
+														"condition": null,
+														"disabled": null,
+														"bindings": {},
+														"actions": [],
+														"icons": null,
+														"activeRoutes": [],
+														"class": "right",
+														"buttonClass": "primary"
+													}
+												],
+												"activeClass": null,
+												"disabledClass": null,
+												"pastClass": null,
+												"defaultAction": null,
+												"useButtons": true
+											},
+											"target": "page",
+											"on": null,
+											"class": null,
+											"customId": null,
+											"width": 1,
+											"height": null,
+											"instances": {},
+											"condition": null
+										}
+									],
+									"class": null,
+									"customId": null,
+									"instances": {},
+									"condition": null,
+									"direction": null,
+									"align": null,
+									"on": null,
+									"collapsed": false,
+									"name": null
+								}
+							],
+							"alias": null,
+							"bindings": {},
+							"state": {
+								"class": null,
+								"fields": [
+									{
+										"label": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": "text",
+												"javascript": null,
+												"template": null,
+												"class": "code",
+												"key": "viewErrorLog.errorLog",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": []
+									}
+								]
+							},
+							"target": "prompt",
+							"on": "viewErrorLog",
+							"class": "overflow",
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null
+						}
+					],
+					"class": null,
+					"customId": null,
+					"instances": {},
+					"condition": null,
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				}
+			],
+			"counter": 14,
+			"variables": [],
+			"query": [
+				"workflowId"
+			],
+			"actions": [
+				{
+					"name": "Download Transition Attachment",
+					"on": "downloadTransitionAttachment",
+					"confirmation": null,
+					"operation": "nabu.misc.workflow.manage.rest.transition.attachment",
+					"route": null,
+					"anchor": null,
+					"bindings": {
+						"workflowId": "downloadTransitionAttachment.workflowId",
+						"transitionId": "downloadTransitionAttachment.id"
+					}
+				}
+			],
+			"class": null,
+			"initial": false,
+			"menuX": 0,
+			"menuY": 0,
+			"states": [
+				{
+					"name": "instance",
+					"operation": "nabu.misc.workflow.manage.rest.instance.get",
+					"bindings": {
+						"workflowId": "page.workflowId"
+					}
+				}
+			],
+			"category": "Workflow",
+			"name": "workflow-detail",
+			"label": "Workflow Detail",
+			"slow": false,
+			"path": null
+		}
+	}
+}

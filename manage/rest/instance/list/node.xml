@@ -1,1 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-05-18T19:58:41.466+02:00" lastModified="2018-05-18T21:23:52.369+02:00" leaf="true" version="12"><environmentId>hyperion</environmentId><hidden>false</hidden><properties/><references>nabu.misc.workflow.manage.types.workflowList</references><references>nabu.misc.workflow.providers.basic.services.getWorkflows</references><references>nabu.services.jdbc.Services.page</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-05-18T19:58:41.466+02:00" lastModified="2020-12-01T17:51:28.357+01:00" leaf="true" version="15">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.misc.workflow.manage.types.workflowList</references>
+    <references>nabu.misc.workflow.providers.basic.services.getWorkflows</references>
+    <references>nabu.services.jdbc.Services.page</references>
+</node>
