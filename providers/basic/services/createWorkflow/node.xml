@@ -1,1 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-23T10:28:31.510+02:00" lastModified="2020-10-23T10:28:31.510+02:00" leaf="true" version="4"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>nabu.services.jdbc.Services.insert</references><references>nabu.misc.workflow.types.WorkflowInstance</references><references>java.lang.String</references><references>be.nabu.eai.module.workflow.provider.WorkflowManager.createWorkflow</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-23T10:28:31.510+02:00" lastModified="2021-07-27T14:32:11.048+02:00" leaf="true" version="5">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.services.jdbc.Services.insert</references>
+    <references>nabu.misc.workflow.types.WorkflowInstance</references>
+    <references>nabu.utils.Runtime.getCorrelationId</references>
+    <references>java.lang.String</references>
+    <references>be.nabu.eai.module.workflow.provider.WorkflowManager.createWorkflow</references>
+</node>

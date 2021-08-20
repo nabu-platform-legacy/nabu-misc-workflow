@@ -3,6 +3,32 @@
 		id="7ab6990e-2578-4726-b3d5-07f8625f4cc3">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
+			id="bf48683c-b28d-42e6-8671-9363ca02d962"
+			label="input/instance/correlationId = null">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="49be99aa-1a0e-4340-b5f7-2e91124348c2"
+				serviceId="nabu.utils.Runtime.getCorrelationId"
+				resultName="result29bb58d545a64eb29bcbc76ef8ead52e"
+				temporaryMapping="true"
+				x="111"
+				y="53"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e0c114f1-e989-4a0f-bc71-d7f6ecd38567"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result29bb58d545a64eb29bcbc76ef8ead52e/correlationId</from>
+			<to>input/instance/correlationId</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
 			id="b8448010-17e9-4b07-b7cf-aa9144766b54">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
