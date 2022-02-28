@@ -15,7 +15,7 @@
     <field name="taskInput" type="java.lang.String"/>
     <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="properties"/>
     <field name="taskId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
-    <structure definition="nabu.misc.workflow.types.WorkflowInstance" minOccurs="0" name="workflow"/>
+    <structure collectionName="WorkflowInstances" definition="nabu.misc.workflow.types.WorkflowInstance" minOccurs="0" name="workflow"/>
     <field maxOccurs="unbounded" name="stateIds" type="java.lang.String"/>
     <field name="rowCount" type="java.lang.Long"/>
     <structure definition="be.nabu.eai.module.workflow.WorkflowState" maxOccurs="unbounded" minOccurs="0" name="states"/>

@@ -1,1 +1,27 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-10-25T20:18:27.168+02:00" lastModified="2018-11-06T14:26:23.210+01:00" leaf="true" version="44"><environmentId>hyperion</environmentId><hidden>false</hidden><properties/><references>be.nabu.libs.types.api.KeyValuePair</references><references>nabu.utils.Runtime.getCurrentToken</references><references>nabu.misc.workflow.providers.basic.database.workflow.selectById</references><references>nabu.misc.workflow.utils.unstage</references><references>be.nabu.eai.module.services.vm.api.ServiceExecutor.execute</references><references>java.util.UUID</references><references>nabu.data.xml.Services.store</references><references>nabu.misc.workflow.providers.basic.database.transition.selectDistinctStates</references><references>nabu.data.xml.Services.marshal</references><references>nabu.misc.workflow.types.WorkflowInstance</references><references>java.lang.Long</references><references>nabu.frameworks.tasks.database.task.unstage</references><references>nabu.frameworks.tasks.services.poller.wakeup</references><references>java.lang.Boolean</references><references>java.lang.Object</references><references>java.lang.String</references><references>nabu.frameworks.tasks.services.queue.publish</references><references>be.nabu.eai.module.workflow.WorkflowState</references><references>nabu.misc.workflow.Services.getDefinitions</references><references>nabu.utils.Object.toProperties</references><references>nabu.utils.Stream.toString</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-10-25T20:18:27.168+02:00" lastModified="2021-10-18T09:12:28.661+02:00" leaf="true" version="45">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>be.nabu.libs.types.api.KeyValuePair</references>
+    <references>nabu.utils.Runtime.getCurrentToken</references>
+    <references>nabu.misc.workflow.providers.basic.database.workflow.selectById</references>
+    <references>nabu.misc.workflow.utils.unstage</references>
+    <references>be.nabu.eai.module.services.vm.api.ServiceExecutor.execute</references>
+    <references>java.util.UUID</references>
+    <references>nabu.data.xml.Services.store</references>
+    <references>nabu.misc.workflow.providers.basic.database.transition.selectDistinctStates</references>
+    <references>nabu.data.xml.Services.marshal</references>
+    <references>nabu.misc.workflow.types.WorkflowInstance</references>
+    <references>java.lang.Long</references>
+    <references>nabu.frameworks.tasks.database.task.unstage</references>
+    <references>nabu.frameworks.tasks.services.poller.wakeup</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.Object</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.tasks.services.queue.publish</references>
+    <references>be.nabu.eai.module.workflow.WorkflowState</references>
+    <references>nabu.misc.workflow.Services.getDefinitions</references>
+    <references>nabu.utils.Object.toProperties</references>
+    <references>nabu.utils.Stream.toString</references>
+</node>
