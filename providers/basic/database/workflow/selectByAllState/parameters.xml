@@ -2,7 +2,7 @@
     <field name="join" type="java.lang.String"/>
     <field name="transitionState" type="java.lang.String"/>
     <field name="definitionId" type="java.lang.String"/>
-    <field name="stateId" type="java.lang.String"/>
+    <field name="stateId" type="java.util.UUID"/>
     <field name="from" type="java.util.Date"/>
     <field name="until" type="java.util.Date"/>
     <field name="where" type="java.lang.String"/>

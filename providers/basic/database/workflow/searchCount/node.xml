@@ -1,1 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2018-09-28T12:41:32.309+02:00" lastModified="2018-09-28T12:41:32.309+02:00" leaf="false" version="27"><environmentId>hyperion</environmentId><hidden>false</hidden><properties/><references>java.lang.String</references><references>java.lang.Long</references><references>java.lang.Integer</references><references>java.lang.Boolean</references><references>nabu.misc.workflow.providers.basic.database.workflow.searchCount.parameters</references><references>be.nabu.libs.types.api.KeyValuePair</references><references>nabu.misc.workflow.providers.basic.database.workflow.searchCount.results</references><references>java.lang.Long</references><references>java.lang.Boolean</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2018-09-28T12:41:32.309+02:00" lastModified="2022-06-15T14:17:35.550+02:00" leaf="false" version="28">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>java.lang.String</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Integer</references>
+    <references>java.lang.Boolean</references>
+    <references>be.nabu.libs.services.jdbc.AffixInput</references>
+    <references>be.nabu.libs.types.api.KeyValuePair</references>
+    <references>nabu.misc.workflow.providers.basic.database.workflow.searchCount.results</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Boolean</references>
+</node>

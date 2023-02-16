@@ -1,4 +1,4 @@
 <structure name="parameter">
-    <field maxOccurs="unbounded" name="stateIds" type="java.lang.String"/>
+    <field maxOccurs="unbounded" name="stateIds" type="java.util.UUID"/>
     <field name="before" timezone="UTC" type="java.util.Date"/>
 </structure>

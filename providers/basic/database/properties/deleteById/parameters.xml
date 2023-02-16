@@ -1,4 +1,4 @@
 <structure name="parameter">
-    <field name="id" type="java.lang.String"/>
-    <field name="workflowId" type="java.lang.String"/>
+    <field name="id" type="java.util.UUID"/>
+    <field name="workflowId" type="java.util.UUID"/>
 </structure>

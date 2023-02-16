@@ -1,1 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2018-09-28T12:42:09.572+02:00" lastModified="2020-10-23T10:51:11.782+02:00" leaf="false" version="10"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>java.lang.String</references><references>java.lang.Long</references><references>java.lang.Integer</references><references>java.lang.Boolean</references><references>be.nabu.libs.types.api.KeyValuePair</references><references>nabu.misc.workflow.types.WorkflowInstance</references><references>java.lang.Long</references><references>java.lang.Boolean</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2018-09-28T12:42:09.572+02:00" lastModified="2022-06-15T14:17:35.559+02:00" leaf="false" version="11">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>java.lang.String</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Integer</references>
+    <references>java.lang.Boolean</references>
+    <references>be.nabu.libs.services.jdbc.AffixInput</references>
+    <references>be.nabu.libs.types.api.KeyValuePair</references>
+    <references>nabu.misc.workflow.types.WorkflowInstance</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Boolean</references>
+</node>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2022-06-14T16:49:37.194+02:00" lastModified="2022-06-14T17:26:39.813+02:00" leaf="true" version="4">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>java.util.UUID</references>
+    <references>java.lang.String</references>
+    <references>java.lang.Boolean</references>
+    <references>nabu.misc.workflow.types.workflowDefinition</references>
+</node>

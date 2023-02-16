@@ -14,5 +14,4 @@
     <webFragments>nabu.misc.workflow.manage.rest.definition.initialTransitions</webFragments>
     <webFragments>nabu.misc.workflow.manage.rest.instance.createWithAttachment</webFragments>
     <webFragments>nabu.misc.workflow.manage.rest.instance.retry</webFragments>
-    <audience>MANAGER</audience>
 </webModule>
