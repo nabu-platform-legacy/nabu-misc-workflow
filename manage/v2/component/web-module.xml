@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webModule>
+    <webFragments>nabu.misc.workflow.manage.v2.dashboard.byTransitionState</webFragments>
+    <webFragments>nabu.misc.workflow.manage.v2.definition.definitions</webFragments>
+    <webFragments>nabu.misc.workflow.manage.v2.definition.initialTransitions</webFragments>
+    <webFragments>nabu.misc.workflow.manage.v2.definition.transitions</webFragments>
+    <webFragments>nabu.misc.workflow.manage.v2.instance.property.create</webFragments>
+    <webFragments>nabu.misc.workflow.manage.v2.instance.property.delete</webFragments>
+    <webFragments>nabu.misc.workflow.manage.v2.instance.property.update</webFragments>
+    <webFragments>nabu.misc.workflow.manage.v2.instance.attachment</webFragments>
+    <webFragments>nabu.misc.workflow.manage.v2.instance.createWithAttachment</webFragments>
+    <webFragments>nabu.misc.workflow.manage.v2.instance.fail</webFragments>
+    <webFragments>nabu.misc.workflow.manage.v2.instance.get</webFragments>
+    <webFragments>nabu.misc.workflow.manage.v2.instance.list</webFragments>
+    <webFragments>nabu.misc.workflow.manage.v2.instance.retry</webFragments>
+    <webFragments>nabu.misc.workflow.manage.v2.transition.attachment</webFragments>
+</webModule>

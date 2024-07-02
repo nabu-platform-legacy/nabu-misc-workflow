@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-05-18T19:58:41.466+02:00" lastModified="2024-06-20T22:25:14.303+02:00" leaf="true" version="16">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.misc.workflow.manage.types.workflowList</references>
+    <references>nabu.misc.workflow.providers.basic.services.getWorkflows</references>
+    <references>nabu.services.jdbc.Services.page</references>
+</node>

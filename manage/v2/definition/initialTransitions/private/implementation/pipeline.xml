@@ -1,0 +1,5 @@
+<structure interface="nabu.misc.workflow.manage.v2.definition.initialTransitions:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure definition="be.nabu.eai.module.workflow.WorkflowState" maxOccurs="unbounded" minOccurs="0" name="states"/>
+</structure>

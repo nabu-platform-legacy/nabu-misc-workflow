@@ -1,0 +1,10 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="33ab4a0d-8781-4f25-b386-d2b9ea07065a"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="8c5101e7-6128-41f7-a6ab-9f86c0de3fe3"
+			lineNumber="2">
+	</steps>
+</sequence>

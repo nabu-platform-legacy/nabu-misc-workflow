@@ -1,0 +1,6 @@
+<structure interface="nabu.misc.workflow.manage.v2.instance.property.create:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="WorkflowInstanceProperties" definition="nabu.misc.workflow.types.WorkflowInstanceProperty" name="property"/>
+    <structure collectionName="WorkflowTransitionInstances" definition="nabu.misc.workflow.types.WorkflowTransitionInstance" maxOccurs="unbounded" minOccurs="0" name="transitions"/>
+</structure>

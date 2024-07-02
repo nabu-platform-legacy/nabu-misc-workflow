@@ -1,0 +1,6 @@
+<structure interface="nabu.misc.workflow.manage.v2.instance.createWithAttachment:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure definition="be.nabu.eai.module.workflow.WorkflowTransition" minOccurs="0" name="transition"/>
+    <field name="name" type="java.lang.String"/>
+</structure>

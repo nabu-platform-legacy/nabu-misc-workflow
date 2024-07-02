@@ -1,0 +1,4 @@
+<structure name="workflowInstanceProperty">
+    <field minOccurs="0" name="key" type="java.lang.String"/>
+    <field minOccurs="0" name="value" type="java.lang.String"/>
+</structure>

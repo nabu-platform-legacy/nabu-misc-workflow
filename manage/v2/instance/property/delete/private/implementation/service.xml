@@ -1,0 +1,91 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="b5653e48-9392-4aac-833f-f7709a2215a6"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="e1ebd7e9-14d0-44f9-a4cd-3d22702bd0af"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="f87bba93-dc63-48e3-957a-431b0110c505"
+				serviceId="nabu.misc.workflow.providers.basic.database.properties.selectById"
+				resultName="resultb96949fc61d844d594bf7261efc66095"
+				temporaryMapping="true"
+				x="61"
+				y="103"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0690c9c8-7aa7-4fa3-9ac7-c10d0ee3a3d2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/workflowId</from>
+				<to>parameters/workflowId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="49d1aea9-7eb1-4456-b938-a02f95798361"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/propertyId</from>
+				<to>parameters/id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e1b040d0-e511-44d4-9afe-6ae9a1acc5a1"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultb96949fc61d844d594bf7261efc66095/results[0]</from>
+			<to>property</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			id="febc25bc-2678-4102-ac3f-d8c3560c2ff1"
+			label="!property"
+			lineNumber="3"
+			code="404"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="31dd26f8-2d3f-4496-b4f6-366c4d812535"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="8a189cc5-8333-49cf-a49f-8b6123e0abe9"
+				serviceId="nabu.misc.workflow.providers.basic.database.properties.deleteById"
+				resultName="result62738c70ce9c4f7692b7571f054fe6dd"
+				temporaryMapping="true"
+				x="8"
+				y="63"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="72785c96-2f51-4b96-834f-625a6c06a941"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/workflowId</from>
+				<to>parameters[0]/workflowId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="af222110-56de-443a-a3a9-aa9bc6927512"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/propertyId</from>
+				<to>parameters[0]/id</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

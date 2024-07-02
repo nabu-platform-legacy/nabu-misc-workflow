@@ -1,0 +1,20 @@
+<structure name="query">
+    <field minOccurs="0" name="definitionId" type="java.lang.String"/>
+    <field minOccurs="0" name="from" type="java.util.Date"/>
+    <field minOccurs="0" name="until" type="java.util.Date"/>
+    <field minOccurs="0" name="stateId" type="java.lang.String"/>
+    <field minOccurs="0" name="transitionState" type="java.lang.String"/>
+    <field minOccurs="0" name="offset" type="java.lang.Integer"/>
+    <field minOccurs="0" name="limit" type="java.lang.Integer"/>
+    <field minOccurs="0" name="environment" type="java.lang.String"/>
+    <field minOccurs="0" name="parentId" type="java.lang.String"/>
+    <field minOccurs="0" name="contextId" type="java.lang.String"/>
+    <field minOccurs="0" name="correlationId" type="java.lang.String"/>
+    <field minOccurs="0" name="groupId" type="java.lang.String"/>
+    <field minOccurs="0" name="workflowType" type="java.lang.String"/>
+    <field minOccurs="0" name="batchId" type="java.lang.String"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="property" type="java.lang.String"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="workflowId" type="java.lang.String"/>
+    <field minOccurs="0" name="running" type="java.lang.Boolean"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="orderBy" type="java.lang.String"/>
+</structure>

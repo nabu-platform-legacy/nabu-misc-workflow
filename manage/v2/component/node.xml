@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2024-06-20T22:20:42.897+02:00" lastModified="2024-06-20T22:26:09.554+02:00" leaf="true" version="4">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.misc.workflow.manage.v2.dashboard.byTransitionState</references>
+    <references>nabu.misc.workflow.manage.v2.definition.definitions</references>
+    <references>nabu.misc.workflow.manage.v2.definition.initialTransitions</references>
+    <references>nabu.misc.workflow.manage.v2.definition.transitions</references>
+    <references>nabu.misc.workflow.manage.v2.instance.property.create</references>
+    <references>nabu.misc.workflow.manage.v2.instance.property.delete</references>
+    <references>nabu.misc.workflow.manage.v2.instance.property.update</references>
+    <references>nabu.misc.workflow.manage.v2.instance.attachment</references>
+    <references>nabu.misc.workflow.manage.v2.instance.createWithAttachment</references>
+    <references>nabu.misc.workflow.manage.v2.instance.fail</references>
+    <references>nabu.misc.workflow.manage.v2.instance.get</references>
+    <references>nabu.misc.workflow.manage.v2.instance.list</references>
+    <references>nabu.misc.workflow.manage.v2.instance.retry</references>
+    <references>nabu.misc.workflow.manage.v2.transition.attachment</references>
+</node>

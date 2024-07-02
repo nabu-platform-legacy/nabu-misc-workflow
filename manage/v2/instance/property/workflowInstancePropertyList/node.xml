@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2019-02-07T09:20:38.340+01:00" lastModified="2024-06-20T22:20:28.344+02:00" leaf="true" version="2">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.misc.workflow.manage.v2.instance.property.workflowInstanceProperty</references>
+    <references>nabu.services.jdbc.types.Page</references>
+</node>

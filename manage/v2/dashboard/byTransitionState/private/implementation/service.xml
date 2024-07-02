@@ -1,0 +1,49 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="18e735f0-d1d0-4454-a6ab-a7c1349f5112"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="6a468b20-b0ff-40be-ba6c-a543be66c71f"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="7d8b08f5-5220-46d1-a6e2-3b079611e8ba"
+				serviceId="nabu.misc.workflow.providers.basic.database.workflow.selectGroupedByStatus"
+				resultName="result23702c42aa9547ecac341c4ff7a21e85"
+				temporaryMapping="true"
+				x="86"
+				y="101"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="8369cfa3-3f40-4164-9e2d-5d3c237bd32c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/since</from>
+				<to>parameters/since</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="49881ff7-58e8-4e5f-b642-f1fdab2c21b9"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/definitionId</from>
+				<to>parameters/definitionId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="6ef2df05-a5d6-47d7-8f07-e91690cdb7b3"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result23702c42aa9547ecac341c4ff7a21e85/results</from>
+			<to>output/content/results</to>
+		</steps>
+	</steps>
+</sequence>

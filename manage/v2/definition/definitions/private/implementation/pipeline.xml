@@ -1,0 +1,5 @@
+<structure interface="nabu.misc.workflow.manage.v2.definition.definitions:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <field name="package" type="java.lang.String"/>
+</structure>

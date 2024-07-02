@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2019-10-22T11:07:06.432+02:00" lastModified="2024-06-20T22:22:25.974+02:00" leaf="true" version="27">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.datastore.Services.store</references>
+    <references>nabu.misc.workflow.Services.start</references>
+    <references>nabu.misc.workflow.manage.v2.instance.createOutput</references>
+    <references>java.lang.String</references>
+    <references>nabu.misc.workflow.Services.getInitialStates</references>
+    <references>be.nabu.eai.module.workflow.WorkflowTransition</references>
+    <references>java.io.InputStream</references>
+</node>

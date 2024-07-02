@@ -1,0 +1,147 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="8d4b0f6c-467c-479b-ae20-4a7a21904015"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="f5b61103-d80c-47f3-9c2f-84fd6263df07"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="8f1d2b13-9877-46c1-b965-a6faf967ea8b"
+				serviceId="nabu.misc.workflow.providers.basic.services.getTransitions"
+				resultName="result40c13b3b96714320bf951e27379912d9"
+				temporaryMapping="true"
+				x="121"
+				y="112"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="7710ac11-c706-443c-bef6-829374efb7cc"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/workflowId</from>
+				<to>workflowId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="c3e88e26-95ce-4682-9e95-31de191bcb4d"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result40c13b3b96714320bf951e27379912d9/transitions[id = /input/path/transitionId]</from>
+			<to>transition</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			id="68e4e33b-7140-478a-b088-9a6921d29b85"
+			label="!transition"
+			lineNumber="3"
+			message="Could not find transition"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			id="04c9dca2-2c0e-4629-bada-068a546c8da0"
+			label="transition/uri = null"
+			lineNumber="4"
+			message="No attachment in transition"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Get content"
+			disabled="false"
+			id="dcc31f92-d860-40c9-bc03-410d6e8fbd85"
+			lineNumber="5">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="f7982416-a6df-408e-a33c-6bbaaa7989b1"
+				serviceId="nabu.frameworks.datastore.Services.retrieve"
+				resultName="result30288dfafa004caebb51f0b9bbe7a851"
+				temporaryMapping="true"
+				x="130"
+				y="105"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2e8432de-fd54-4721-82bd-b413a7c8a24d"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>transition/uri</from>
+				<to>uri</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="b9cb5e69-3e61-4f7b-af66-25a6d4a0f963"
+				serviceId="nabu.frameworks.datastore.Services.properties"
+				resultName="result35f399b552d7462a9ba27198af0bae9e"
+				temporaryMapping="true"
+				x="133"
+				y="214"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3db596c3-4720-42e0-bafe-72b0ea53bec6"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>transition/uri</from>
+				<to>uri</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="2c7dd634-18fa-47e0-ac54-c81fce194e70"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result30288dfafa004caebb51f0b9bbe7a851/stream</from>
+			<to>output/content</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="18b08f58-0ab5-4e5b-8b58-518713e1385a"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result35f399b552d7462a9ba27198af0bae9e/properties/contentType</from>
+			<to>output/meta/contentType</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="46000334-9ac4-482b-b468-f58b9b6761a7"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result35f399b552d7462a9ba27198af0bae9e/properties/size</from>
+			<to>output/meta/contentLength</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="b0ee8ba2-4caf-45b5-a407-7f747a7c5ca6"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result35f399b552d7462a9ba27198af0bae9e/properties/name</from>
+			<to>output/meta/fileName</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="2c7c147a-c2aa-4a07-b46c-d9c58cc1db50"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result35f399b552d7462a9ba27198af0bae9e/properties/lastModified</from>
+			<to>output/cache/lastModified</to>
+		</steps>
+	</steps>
+</sequence>

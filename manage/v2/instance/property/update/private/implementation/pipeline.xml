@@ -1,0 +1,5 @@
+<structure interface="nabu.misc.workflow.manage.v2.instance.property.update:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="WorkflowInstanceProperties" definition="nabu.misc.workflow.types.WorkflowInstanceProperty" minOccurs="0" name="property"/>
+</structure>

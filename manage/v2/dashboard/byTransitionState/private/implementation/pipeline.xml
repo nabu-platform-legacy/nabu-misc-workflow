@@ -1,0 +1,4 @@
+<structure interface="nabu.misc.workflow.manage.v2.dashboard.byTransitionState:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+</structure>

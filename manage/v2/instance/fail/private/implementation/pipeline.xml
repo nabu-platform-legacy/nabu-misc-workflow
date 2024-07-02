@@ -1,0 +1,5 @@
+<structure interface="nabu.misc.workflow.manage.v2.instance.fail:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="WorkflowInstances" definition="nabu.misc.workflow.types.WorkflowInstance" minOccurs="0" name="workflow"/>
+</structure>

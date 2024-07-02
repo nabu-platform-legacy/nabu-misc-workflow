@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2019-02-07T09:20:38.445+01:00" lastModified="2024-06-20T22:21:47.518+02:00" leaf="true" version="11">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.misc.workflow.providers.basic.database.properties.insert</references>
+    <references>nabu.utils.List.reverse</references>
+    <references>nabu.misc.workflow.manage.v2.instance.property.workflowInstanceProperty</references>
+    <references>nabu.utils.Server.uuid</references>
+    <references>nabu.misc.workflow.types.WorkflowTransitionInstance</references>
+    <references>nabu.misc.workflow.manage.v2.instance.property.workflowInstancePropertyInput</references>
+    <references>nabu.misc.workflow.types.WorkflowInstanceProperty</references>
+    <references>nabu.misc.workflow.providers.basic.database.transition.selectByWorkflowId</references>
+</node>

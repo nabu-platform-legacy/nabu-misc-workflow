@@ -1,0 +1,5 @@
+<structure interface="nabu.misc.workflow.manage.v2.transition.attachment:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="WorkflowTransitionInstances" definition="nabu.misc.workflow.types.WorkflowTransitionInstance" minOccurs="0" name="transition"/>
+</structure>
